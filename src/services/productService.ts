@@ -3,6 +3,7 @@ import type { Product } from "@/types/product";
 
 const getProducts = (): Product[] => {
     return products;
+
 };
 
 const getProductById = (id: string): Product | undefined => {
