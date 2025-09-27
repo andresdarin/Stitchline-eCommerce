@@ -1,6 +1,6 @@
 import { Product } from "@/types/product";
 
-export const mockProducts: Product[] = [
+export const products: Product[] = [
     {
         id: '1',
         name: 'Camisa Clásica de Algodón',
