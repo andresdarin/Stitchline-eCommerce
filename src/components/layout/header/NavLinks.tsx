@@ -14,8 +14,8 @@ export const NavLinks = () => {
     return (
         <nav className="hidden md:flex space-x-6">
             {navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="text-gray-700 hover:text-gray-900">
-                    {item.label}
+                <Link key={item.href} href={item.href} className="text-sm font-medium text-gray-700 hover:--color1">
+                    {item.label.toUpperCase()}
                 </Link>
             ))}
         </nav>
