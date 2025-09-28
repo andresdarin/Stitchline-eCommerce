@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { products } from '../data/data';
 import { Product } from '@/types/product';
 import { Header } from '@/components/layout/header/Header';
+import Hero from '@/components/layout/hero/Hero';
 
 export const HomePage = () => {
 
@@ -18,7 +19,7 @@ export const HomePage = () => {
 
     return (
         <>
-            <Header />
+            <Hero />
         </>
     )
 }
