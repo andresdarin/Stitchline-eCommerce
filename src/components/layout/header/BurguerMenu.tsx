@@ -2,6 +2,6 @@ import React from 'react'
 
 export const BurguerMenu = () => {
     return (
-        <div>BurguerMenu</div>
+        <div className='md:hidden'>BurguerMenu</div>
     )
 }
