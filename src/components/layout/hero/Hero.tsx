@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { Header } from '../header/Header';
+import CTA from '@/components/ui/CTA';
 
 const Hero = () => {
     return (
@@ -17,6 +18,7 @@ const Hero = () => {
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-6xl">Mixed Textiles</h1>
                     <p className="mt-4 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non molestias possimus id quisquam?</p>
+                    <CTA href="#" variant="primary" className="mt-6">Shop Now</CTA>
                 </div>
             </section>
         </>
