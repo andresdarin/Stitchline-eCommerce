@@ -3,6 +3,7 @@ import { products } from '../data/data';
 import { Product } from '@/types/product';
 import { Header } from '@/components/layout/header/Header';
 import Hero from '@/components/layout/hero/Hero';
+import BannerBelowHero from '@/components/layout/hero/BannerBelowHero';
 
 export const HomePage = () => {
 
@@ -20,6 +21,7 @@ export const HomePage = () => {
     return (
         <>
             <Hero />
+            <BannerBelowHero />
         </>
     )
 }

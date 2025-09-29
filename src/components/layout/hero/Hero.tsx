@@ -15,11 +15,14 @@ const Hero = () => {
                     style={{ objectFit: 'cover' }}
                     className="absolute inset-0"
                 />
-                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+                <div className="relative z-10 flex flex-col items-start justify-end h-full pb-[12rem] pl-[4rem] text-left text-white">
                     <h1 className="text-6xl">Mixed Textiles</h1>
-                    <p className="mt-4 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non molestias possimus id quisquam?</p>
+                    <p className="mt-4 w-[30%] text-lg">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non molestias possimus id quisquam?
+                    </p>
                     <CTA href="#" variant="primary" className="mt-6">Shop Now</CTA>
                 </div>
+
             </section>
         </>
 
