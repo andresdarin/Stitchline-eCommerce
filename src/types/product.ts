@@ -12,3 +12,4 @@ export type Product = {
     inStock: boolean;
     featured?: boolean;
 };
+

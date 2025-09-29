@@ -12,7 +12,7 @@ const BannerBelowHero = () => {
                     curveAmount={0}
                     direction="right"
                     interactive={true}
-                    className="custom-text-style text-[1.5rem] font-semibold uppercase"
+                    className="custom-text-style text-[1rem] font-semibold uppercase"
                 />
             </section>
 
@@ -32,7 +32,7 @@ const BannerBelowHero = () => {
                     curveAmount={0}
                     direction="right"
                     interactive={true}
-                    className="custom-text-style text-[1.5rem] font-semibold uppercase"
+                    className="custom-text-style text-[1rem] font-semibold uppercase"
                 />
             </section>
         </div>
