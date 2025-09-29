@@ -9,7 +9,7 @@ export const Header = () => {
     return (
         <header className="w-full h-20 sticky top-0 z-50">
             {/*Wrapper*/}
-            <div className="w-19/20 mx-auto h-full flex items-center justify-between border-b border-black">
+            <div className="w-19/20 mx-auto h-full flex items-center justify-between border-b border-[var(--color3)]">
 
                 <section className="flex items-center space-x-8">
                     <Logo />
