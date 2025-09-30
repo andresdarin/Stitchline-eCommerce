@@ -4,17 +4,6 @@ import CurvedLoop from "@/components/ui/CurvedLoop";
 const BannerBelowHero = () => {
     return (
         <div className="relative border-[var(--color1)] z-10 flex flex-col items-center text-center justify-center h-full gap-8 text-[var(--color1)]">
-            {/* Loop arriba */}
-            <section className="h-16 w-full">
-                <CurvedLoop
-                    marqueeText="Step ✦ Into ✦ Your ✦ Dream ✦ Wardrobe ✦ and ✦ Own ✦ Every ✦ Moment ✨"
-                    speed={0.5}
-                    curveAmount={0}
-                    direction="right"
-                    interactive={true}
-                    className="custom-text-style text-[1rem] font-semibold uppercase"
-                />
-            </section>
 
             {/* Contenido centrado pero alineado a la izquierda */}
             <section className="flex flex-col mt-15 items-center text-center justify-center px-4 md:px-0">
@@ -24,7 +13,7 @@ const BannerBelowHero = () => {
                 </p>
             </section>
 
-            {/* Loop abajo */}
+            {/* Loop abajo 
             <section className="h-16 w-full">
                 <CurvedLoop
                     marqueeText="Step ✦ Into ✦ Your ✦ Dream ✦ Wardrobe ✦ and ✦ Own ✦ Every ✦ Moment ✨"
@@ -34,7 +23,7 @@ const BannerBelowHero = () => {
                     interactive={true}
                     className="custom-text-style text-[1rem] font-semibold uppercase"
                 />
-            </section>
+            </section>*/}
         </div>
     );
 };

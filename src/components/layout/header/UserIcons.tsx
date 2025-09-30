@@ -1,5 +1,5 @@
 import { SearchInput } from "@/components/ui/SearchInput"
-import { Search, Handbag, Bookmark, UserRound } from "lucide-react"
+import { Search, ShoppingCartIcon, Bookmark, UserRound } from "lucide-react"
 import { useState } from "react"
 
 export const UserIcons = () => {
@@ -13,7 +13,7 @@ export const UserIcons = () => {
                 <Search size={20} />
             </button>
             <button className="p-2 rounded hover:bg-gray-200">
-                <Handbag size={20} />
+                <ShoppingCartIcon size={20} />
             </button>
             <button className="p-2 rounded hover:bg-gray-200">
                 <Bookmark size={20} />

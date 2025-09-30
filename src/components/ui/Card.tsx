@@ -1,4 +1,4 @@
-import { Search, Handbag, Bookmark, Eye } from "lucide-react"
+import { Search, ShoppingBag, Bookmark, Eye } from "lucide-react"
 import { Product } from '../../types/product';
 import Image from "next/image";
 
@@ -28,14 +28,14 @@ export const Card = ({ product }: ProductCardProps) => {
                 </div>
             </div>
 
-            <div className="flex flex-row mb-0 mt-auto justify-between p-4">
-                <div>
+            <div className="flex flex-row border border-black justify-between">
+                <div className="p-4">
                     <h2 className="text-sm uppercase font-bold">{product?.name}</h2>
                     <p className="text-sm text-gray-600">${product?.price}</p>
                 </div>
-                <div className="flex align-middle">
-                    <button className="flex items-center justify-center text-[var(--color1)]">
-                        <Handbag className="mr-2 text-sm" />
+                <div className="flex p-4 align-middle">
+                    <button className="flex  items-center justify-center text-[var(--color1)]">
+                        <ShoppingBag className="text-sm" />
                     </button>
                 </div>
             </div>

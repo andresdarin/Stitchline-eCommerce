@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { products } from '../data/data';
 import { Product } from '@/types/product';
-import { Header } from '@/components/layout/header/Header';
 import Hero from '@/components/layout/hero/Hero';
 import BannerBelowHero from '@/components/layout/hero/BannerBelowHero';
 import StoreGrid from '@/components/layout/store/StoreGrid';
+import Duality from '@/components/layout/duality/Duality';
 
 export const HomePage = () => {
 
@@ -24,6 +24,7 @@ export const HomePage = () => {
             <Hero />
             <BannerBelowHero />
             <StoreGrid />
+            <Duality />
         </>
     )
 }
