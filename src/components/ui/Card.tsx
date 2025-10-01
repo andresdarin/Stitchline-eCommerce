@@ -1,4 +1,4 @@
-import { Search, ShoppingBag, Bookmark, Eye } from "lucide-react"
+import { ShoppingBag, Bookmark, Eye } from "lucide-react"
 import { Product } from '../../types/product';
 import Image from "next/image";
 

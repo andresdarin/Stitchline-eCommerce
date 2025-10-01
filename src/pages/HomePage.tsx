@@ -6,6 +6,7 @@ import BannerBelowHero from '@/components/layout/hero/BannerBelowHero';
 import StoreGrid from '@/components/layout/store/StoreGrid';
 import Duality from '@/components/layout/duality/Duality';
 import { BrandCarousel } from '@/components/layout/carousel/BrandCarousel';
+import { News } from '@/components/layout/news/News';
 
 
 export const HomePage = () => {
@@ -28,6 +29,7 @@ export const HomePage = () => {
             <StoreGrid />
             <Duality />
             <BrandCarousel />
+            <News />
         </>
     )
 }

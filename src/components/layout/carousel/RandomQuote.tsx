@@ -3,11 +3,11 @@ import { fashionQuotes } from "@/data/quotes";
 import { useEffect, useState } from "react";
 
 interface RandomQuoteProps {
-    interval?: number; 
-    className?: string; 
+    interval?: number;
+    className?: string;
 }
 
-export const RandomQuote: React.FC<RandomQuoteProps> = ({ interval = 3000, className = "" }) => {
+export const RandomQuote: React.FC<RandomQuoteProps> = ({ interval = 2500, className = "" }) => {
     const [currentQuote, setCurrentQuote] = useState<string>("");
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const RandomQuote: React.FC<RandomQuoteProps> = ({ interval = 3000, class
     }, [interval]);
 
     return (
-        <p className={`text-xl italic font-light text-gray-600 max-w-2xl mx-auto ${className}`}>
+        <p className={`text-xl italic font-light text-gray-600 max-w-2xl min-h-15 mx-auto ${className}`}>
             {currentQuote}
         </p>
     );
