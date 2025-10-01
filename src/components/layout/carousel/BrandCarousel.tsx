@@ -10,9 +10,9 @@ import { BannerPromo } from "./BannerPromo";
 export const BrandCarousel = () => {
     return (
         <div className="my-20 text-center flex flex-col justify-center items-center">
-            <Quote className="inline-block" />
-            <RandomQuote className="text-4xl inline-block m-8" />
-            <X className="text-4xl inline-block m-4" />
+            <Quote size={40} className="inline-block" />
+            <RandomQuote className="text-4xl inline-block m-12" />
+            <X size={15} className="inline-block" />
             <Logos logos={logos} />
             <BannerPromo />
         </div>

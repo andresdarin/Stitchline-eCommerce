@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import 'swiper/css';
+@import 'swiper/css/effect-coverflow';
+@import 'swiper/css/pagination';
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -105,3 +109,5 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+

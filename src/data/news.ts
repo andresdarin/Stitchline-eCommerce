@@ -11,9 +11,9 @@ export const news: New[] = [
     },
     {
         id: 2,
-        title: "Special Promotion: 20% OFF",
-        description: "Limited time only! Get 20% off on everything in our online store.",
-        img: "/img/news/promo-20off.webp",
+        title: "Special Promotion: 50% OFF",
+        description: "Limited time only! Get 50% off on everything in our online store.",
+        img: "/img/news/promo-50off.webp",
         link: "/sale",
         date: "2025-10-15"
     },
@@ -59,10 +59,10 @@ export const news: New[] = [
     },
     {
         id: 8,
-        title: "Advanced Tech Sportswear",
-        description: "Explore our sportswear line with breathable, high-performance fabrics.",
-        img: "/img/news/sportswear.webp",
-        link: "/collection/sportswear",
+        title: "Skater Essentials",
+        description: "Casual fits with an urban edge — inspired by skater culture and timeless streetwear.",
+        img: "/img/news/skater-essentials.webp",
+        link: "/collection/skater",
         date: "2025-09-25"
     },
     {
