@@ -6,6 +6,7 @@ const CTA: React.FC<CTAProps> = ({ children, variant = 'primary', onClick, href,
     const variants = {
         primary: 'bg-transparent border rounded-none text-white border hover:transform hover:scale-105',
         secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300',
+        tertiary: 'border-b-1 rounded-none border-black w-40 italic'
     };
     if (href) {
         return (

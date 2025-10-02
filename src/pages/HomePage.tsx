@@ -8,6 +8,7 @@ import Duality from '@/components/layout/duality/Duality';
 import { BrandCarousel } from '@/components/layout/carousel/BrandCarousel';
 import { NewsCarousel } from '@/components/layout/news/News';
 import { Newsletter } from '../components/layout/newsletter/Newsletter';
+import { Vlog } from '@/components/layout/vlog/Vlog';
 
 
 export const HomePage = () => {
@@ -32,6 +33,7 @@ export const HomePage = () => {
             <BrandCarousel />
             <NewsCarousel />
             <Newsletter />
+            <Vlog />
         </>
     )
 }
