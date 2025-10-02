@@ -6,7 +6,7 @@ interface ProductCardProps {
     product: Product;
 }
 
-export const Card = ({ product }: ProductCardProps) => {
+export const Card: React.FC<ProductCardProps> = ({ product }: ProductCardProps) => {
     return (
         <div className="flex flex-col overflow-hidden cursor-pointer h-[620px]">
             <div className="relative h-[100%] w-full">

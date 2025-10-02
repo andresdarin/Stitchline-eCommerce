@@ -7,6 +7,7 @@ import StoreGrid from '@/components/layout/store/StoreGrid';
 import Duality from '@/components/layout/duality/Duality';
 import { BrandCarousel } from '@/components/layout/carousel/BrandCarousel';
 import { NewsCarousel } from '@/components/layout/news/News';
+import { Newsletter } from '../components/layout/newsletter/Newsletter';
 
 
 export const HomePage = () => {
@@ -30,6 +31,7 @@ export const HomePage = () => {
             <Duality />
             <BrandCarousel />
             <NewsCarousel />
+            <Newsletter />
         </>
     )
 }
