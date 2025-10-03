@@ -1,6 +1,11 @@
 import SplitText from "@/components/ui/SplitText"
 import { TruckElectric, Undo2, Shield, MapPinned, ArrowRight } from "lucide-react"
 import { FaGithub, FaInstagram, FaLaptopCode } from "react-icons/fa";
+import { Features } from "./Features";
+import { Support } from "./Support";
+import { Company } from "./Company";
+import { Locations } from "./Locations";
+import { Bottom } from "./Bottom";
 
 export const Footer = () => {
     const handleAnimationComplete = () => {
@@ -8,24 +13,7 @@ export const Footer = () => {
     };
     return (
         <>
-            <div className="flex flex-row w-full justify-around p-8 mt-16 border border-black border-l-0 border-r-0">
-                <div className="flex flex-row gap-2 items-center justify-center">
-                    <TruckElectric />
-                    <h1>Fast Delivery</h1>
-                </div>
-                <div className="flex flex-row gap-2 items-center justify-center">
-                    <Undo2 />
-                    <h1>Free Returns</h1>
-                </div>
-                <div className="flex flex-row gap-2 items-center justify-center">
-                    <Shield />
-                    <h1>Secure Checkout</h1>
-                </div>
-                <div className="flex flex-row gap-2 items-center justify-center">
-                    <MapPinned />
-                    <h1>Order Tracking</h1>
-                </div>
-            </div>
+            <Features />
             <div className="flex flex-row justify-around p-[4rem]">
                 <div>
                     <h2 className="text-4xl">Stitchline</h2>
@@ -34,36 +22,13 @@ export const Footer = () => {
                     </p>
                 </div>
                 {/* Support */}
-                <div>
-                    <h1 className="font-bold text-lg mb-4">Support</h1>
-                    <ul className="space-y-2">
-                        <li><a href="#" className="hover:underline">Help Center</a></li>
-                        <li><a href="#" className="hover:underline">FAQs</a></li>
-                        <li><a href="#" className="hover:underline">Shipping & Returns</a></li>
-                        <li><a href="#" className="hover:underline">Contact Support</a></li>
-                    </ul>
-                </div>
+                <Support />
 
                 {/* Company */}
-                <div>
-                    <h1 className="font-bold text-lg mb-4">Company</h1>
-                    <ul className="space-y-2">
-                        <li><a href="#" className="hover:underline">About Us</a></li>
-                        <li><a href="#" className="hover:underline">Careers</a></li>
-                        <li><a href="#" className="hover:underline">Press</a></li>
-                        <li><a href="#" className="hover:underline">Sustainability</a></li>
-                    </ul>
-                </div>
+                <Company />
 
                 {/* Locations */}
-                <div>
-                    <h1 className="font-bold text-lg mb-4">Locations</h1>
-                    <ul className="space-y-2">
-                        <li>123 King’s Road, London, UK</li>
-                        <li>45 Baker Street, Manchester, UK</li>
-                        <li>78 Queen Street, Edinburgh, UK</li>
-                    </ul>
-                </div>
+                <Locations />
                 {/* Contenido encima */}
                 <div className="relative z-10 flex flex-col p-10 text-black max-w-xl">
                     <h2 className="text-lg font-bold mb-2 uppercase">
@@ -82,14 +47,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-row justify-between p-8 border border-black border-l-0 border-r-0">
-                <h3>© {new Date().getFullYear()} Stitchline. All rights reserved.</h3>
-                <div className="flex flex-row gap-4">
-                    <FaGithub />
-                    <FaInstagram />
-                    <FaLaptopCode />
-                </div>
-            </div>
+            <Bottom />
         </>
     )
 }
