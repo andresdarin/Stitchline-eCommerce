@@ -9,6 +9,8 @@ import { BrandCarousel } from '@/components/layout/carousel/BrandCarousel';
 import { NewsCarousel } from '@/components/layout/news/News';
 import { Newsletter } from '../components/layout/newsletter/Newsletter';
 import { Vlog } from '@/components/layout/vlog/Vlog';
+import { PostCarousel } from '@/components/layout/postCarousel/PostCarousel';
+import { Footer } from '@/components/layout/footer/Footer';
 
 
 export const HomePage = () => {
@@ -34,6 +36,8 @@ export const HomePage = () => {
             <NewsCarousel />
             <Newsletter />
             <Vlog />
+            <PostCarousel />
+            <Footer />
         </>
     )
 }
