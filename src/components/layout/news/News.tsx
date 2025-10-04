@@ -18,7 +18,7 @@ export const NewsCarousel = () => {
             <Swiper
                 effect="coverflow"
                 grabCursor={true}
-                centeredSlides={false}
+                centeredSlides={true}
                 slidesPerView={3}
                 loop={true}
                 autoplay={{
@@ -28,7 +28,7 @@ export const NewsCarousel = () => {
                 coverflowEffect={{
                     rotate: 0,
                     stretch: 0,
-                    depth: 150,
+                    depth: 250,
                     modifier: 1.5,
                     slideShadows: false,
                 }}

@@ -16,9 +16,16 @@
   Esto asegura que **Tailwind funcione en todos los archivos dentro de /pages/**.
 */
 
+// pages/_app.tsx
 import type { AppProps } from "next/app";
 import "../app/globals.css";
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />;
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
