@@ -8,17 +8,17 @@ export const Vlog = () => {
                 <Image
                     src="/img/Clara.jpg"
                     alt="Newsletter Banner"
-                    width={350}
+                    width={450}
                     height={100}
-                    className="object-cover"
+                    className="object-cover pl-10"
 
                 />
                 <Image
                     src="/img/Agatha.jpg"
                     alt="Newsletter Banner"
-                    width={350}
+                    width={450}
                     height={100}
-                    className="object-cover"
+                    className="object-cover pr-10"
 
                 />
             </div>
