@@ -17,7 +17,7 @@ const Hero = () => {
                 />
                 <div className="relative z-10 flex flex-col items-start justify-end h-full pb-[12rem] pl-[4rem] text-left text-white">
                     <h1 className="text-6xl">Stitchline</h1>
-                    <p className="mt-4 w-[30%] text-lg">
+                    <p className="mt-4 w-[30%] text-lg font-thin">
                         Discover timeless fashion crafted with care, designed to fit your lifestyle and express your individuality.
                     </p>
                     <CTA href="#" variant="primary" className="mt-6">Shop Now</CTA>

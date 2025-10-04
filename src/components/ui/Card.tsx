@@ -29,16 +29,17 @@ export const Card: React.FC<ProductCardProps> = ({ product }: ProductCardProps) 
                 </div>
             </div>
 
-            <div className="flex flex-row border border-black justify-between">
-                <div className="p-4">
+            <div className="grid grid-cols-6 border border-black">
+                <div className="p-4 col-span-5">
                     <h2 className="text-sm uppercase font-bold">{product?.name}</h2>
                     <p className="text-sm text-gray-600">${product?.price}</p>
                 </div>
-                <div className="flex p-4 align-middle">
-                    <button className="flex  items-center justify-center text-[var(--color1)]">
-                        <ShoppingBag className="text-sm mr-2" />
+                <div className="flex items-center justify-center p-4 border-l border-black">
+                    <button className="flex items-center justify-center text-[var(--color1)]">
+                        <ShoppingBag className="w-5 h-5" />
                     </button>
                 </div>
+
             </div>
         </div>
     )

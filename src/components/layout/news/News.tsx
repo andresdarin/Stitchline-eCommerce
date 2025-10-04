@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
@@ -11,7 +11,9 @@ export const NewsCarousel = () => {
         <div className="w-full py-10">
             <div className="text-center p-10">
                 <h1 className="text-4xl uppercase">News & Updates</h1>
-                <p className="mt-6 text-center text-lg">Stay inspired with our newest collections, fashion stories, and exclusive offers.</p>
+                <p className="mt-6 text-center text-lg">
+                    Stay inspired with our newest collections, fashion stories, and exclusive offers.
+                </p>
             </div>
             <Swiper
                 effect="coverflow"
@@ -19,14 +21,18 @@ export const NewsCarousel = () => {
                 centeredSlides={false}
                 slidesPerView={3}
                 loop={true}
+                autoplay={{
+                    delay: 3000, // cada 3 segundos
+                    disableOnInteraction: false, // sigue aunque el usuario interactúe
+                }}
                 coverflowEffect={{
-                    rotate: 0,       // no rotación
-                    stretch: 0,      // separación lateral
-                    depth: 150,      // profundidad (z-index)
-                    modifier: 1.5,   // intensidad del efecto
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 150,
+                    modifier: 1.5,
                     slideShadows: false,
                 }}
-                modules={[EffectCoverflow]}
+                modules={[EffectCoverflow, Autoplay]}
                 className="w-full"
             >
                 {news.map((item) => (
