@@ -6,6 +6,7 @@ import { Support } from "./Support";
 import { Company } from "./Company";
 import { Locations } from "./Locations";
 import { Bottom } from "./Bottom";
+import { Brand } from "./Brand";
 
 export const Footer = () => {
     const handleAnimationComplete = () => {
@@ -15,21 +16,10 @@ export const Footer = () => {
         <>
             <Features />
             <div className="flex flex-row justify-around p-[4rem]">
-                <div>
-                    <h2 className="text-4xl">Stitchline</h2>
-                    <p className="mt-6 text-lg max-w-2xl">
-                        Made with love. Shared with you.
-                    </p>
-                </div>
-                {/* Support */}
+                <Brand />
                 <Support />
-
-                {/* Company */}
                 <Company />
-
-                {/* Locations */}
                 <Locations />
-                {/* Contenido encima */}
                 <div className="relative z-10 flex flex-col p-10 text-black max-w-xl">
                     <h2 className="text-lg font-bold mb-2 uppercase">
                         Newsletter

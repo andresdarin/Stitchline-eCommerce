@@ -7,7 +7,7 @@ interface NewsProps {
 
 export const NewsCard: React.FC<NewsProps> = ({ newsItem }: NewsProps) => {
     return (
-        <article className="flex flex-col mt-8 max-w-130 overflow-hidden">
+        <article className="flex flex-col mt-8 overflow-hidden">
             {/* Imagen */}
             <div className="relative w-full h-[50rem] ">
                 <span className="z-2 absolute text-xs border border-[var(--color1)] p-2 m-2 hover:text-white hover:bg-black">{newsItem.date}</span>

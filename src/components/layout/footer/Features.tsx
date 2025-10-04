@@ -2,9 +2,11 @@ import { TruckElectric, Undo2, Shield, MapPinned } from "lucide-react";
 
 export const Features = () => {
   return (
-    <div className="grid grid-cols-4 w-full p-8 mt-16 
-            border border-black border-l-0 border-r-0 
-            divide-x divide-black divide">
+    <div
+      className="grid grid-cols-4 w-full mt-16 h-20
+                 border border-black border-l-0 border-r-0 
+                 divide-x divide-black"
+    >
       <div className="flex flex-row gap-2 items-center justify-center">
         <TruckElectric />
         <h1>Fast Delivery</h1>

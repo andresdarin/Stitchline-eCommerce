@@ -7,9 +7,11 @@ export type Product = {
     description: string;
     images: string[];
     category: 'men' | 'women' | 'accessories';
+    subcategory: string;
     sizes: string[];
     colors: string[];
     inStock: boolean;
     featured?: boolean;
+    tags?: string[];
 };
 

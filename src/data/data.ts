@@ -1,127 +1,53 @@
 import { Product } from "@/types/product";
 
 export const products: Product[] = [
-    {
-        id: '1',
-        name: 'JUICE shirt',
-        price: 29.99,
-        originalPrice: 39.99,
-        description: 'Camiseta JUICE',
-        images: [
-            '/img/products/juice-shirt.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'men',
-        sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        colors: ['Blanco', 'Negro', 'Azul Marino', 'Gris'],
-        inStock: true,
-        featured: true
-    },
-    {
-        id: '2',
-        name: 'Warm Vibes Hoodie',
-        price: 79.99,
-        description: 'Sudadera con capucha de corte cómodo y moderno. Tejido suave y cálido, ideal para el día a día o para outfits casuales con estilo. Disponible en varios colores vibrantes.',
-        images: [
-            '/img/products/warm-vibes-hoodie.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'women',
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        colors: ['Negro', 'Gris Claro', 'Azul Marino', 'Rojo'],
-        inStock: true,
-        featured: true
-
-    },
-    {
-        id: '3',
-        name: 'Jeans Slim Fit Premium',
-        price: 129.99,
-        description: 'Jeans de corte slim con mezclilla premium. Su ajuste cómodo y duradero los hace perfectos para el día a día. Acabado stone wash para un look moderno y casual.',
-        images: [
-            '/img/products/jeans-model.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'men',
-        sizes: ['28', '30', '32', '34', '36', '38', '40'],
-        colors: ['Azul Oscuro', 'Azul Claro', 'Negro'],
-        inStock: true,
-        featured: true
-    },
-    {
-        id: '4',
-        name: 'P-Play Hoodie',
-        price: 89.99,
-        description: 'Sudadera con capucha de estilo urbano y cómodo. Tejido suave y cálido, perfecta para looks casuales o para mantener el estilo en cualquier ocasión. Diseño moderno y versátil.',
-        images: [
-            '/img/products/p-play-hoodie.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'women',
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        colors: ['Negro', 'Gris', 'Azul Marino', 'Rojo'],
-        inStock: true,
-        featured: true
-    },
-    {
-        id: '5',
-        name: 'Reloj Minimalista',
-        price: 79.99,
-        description: 'Reloj de pulsera con diseño minimalista. Caja de acero inoxidable y correa de cuero genuino. Resistente al agua.',
-        images: [
-            '/img/products/watch.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'accessories',
-        sizes: ['Único'],
-        colors: ['Negro', 'Marrón', 'Plateado'],
-        inStock: true,
-        featured: true
-    },
-    {
-        id: '6',
-        name: 'Boneless Tee',
-        price: 49.99,
-        description: 'Camiseta de algodón suave con corte clásico y estilo casual. Perfecta para combinar en cualquier outfit y mantener comodidad todo el día. Diseño moderno y versátil.',
-        images: [
-            '/img/products/boneless.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'women',
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        colors: ['Blanco', 'Negro', 'Gris', 'Azul'],
-        inStock: true,
-        featured: true
-    },
-    {
-        id: '7',
-        name: 'Sport Shorts',
-        price: 39.99,
-        description: 'Shorts deportivos ligeros y cómodos, diseñados para el máximo rendimiento y libertad de movimiento. Tejido transpirable ideal para entrenamientos o actividades al aire libre.',
-        images: [
-            '/img/products/sport-short.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'women',
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        colors: ['Negro', 'Gris', 'Azul Marino', 'Rojo'],
-        inStock: true,
-        featured: true
-    },
-    {
-        id: '8',
-        name: 'Urban Backpack',
-        price: 89.99,
-        description: 'Mochila urbana resistente y versátil. Compartimentos amplios para organizar tus cosas y diseño cómodo para el día a día. Ideal para estudio, trabajo o viajes cortos.',
-        images: [
-            '/img/products/urban-backpack.jpg',
-            '/img/bg-hero.webp'
-        ],
-        category: 'accessories',
-        sizes: ['Único'],
-        colors: ['Negro', 'Gris', 'Azul Marino'],
-        inStock: true,
-        featured: true
-    }
-
+    // === Productos originales ===
+    { id: '1', name: 'JUICE shirt', price: 29.99, originalPrice: 39.99, description: 'Camiseta JUICE', images: ['/img/products/juice-shirt.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'camisetas', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], colors: ['Blanco', 'Negro', 'Azul Marino', 'Gris'], inStock: true, featured: true, tags: ['bestseller'] },
+    { id: '2', name: 'Warm Vibes Hoodie', price: 79.99, description: 'Sudadera con capucha de corte cómodo y moderno.', images: ['/img/products/warm-vibes-hoodie.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL', 'XXL'], colors: ['Negro', 'Gris Claro', 'Azul Marino', 'Rojo'], inStock: true, featured: true, tags: ['new'] },
+    { id: '3', name: 'Jeans Slim Fit Premium', price: 129.99, description: 'Jeans de corte slim con mezclilla premium. Cómodos y duraderos.', images: ['/img/products/jeans-model.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'jeans', sizes: ['28', '30', '32', '34', '36', '38', '40'], colors: ['Azul Oscuro', 'Azul Claro', 'Negro'], inStock: true, featured: true },
+    { id: '4', name: 'P-Play Hoodie', price: 89.99, description: 'Sudadera con capucha de estilo urbano y cómodo.', images: ['/img/products/p-play-hoodie.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL', 'XXL'], colors: ['Negro', 'Gris', 'Azul Marino', 'Rojo'], inStock: true, featured: true },
+    { id: '5', name: 'Reloj Minimalista', price: 79.99, description: 'Reloj de pulsera con diseño minimalista.', images: ['/img/products/watch.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'watches', sizes: ['Único'], colors: ['Negro', 'Marrón', 'Plateado'], inStock: true, featured: true },
+    { id: '6', name: 'Boneless Tee', price: 49.99, description: 'Camiseta de algodón suave con corte clásico y estilo casual.', images: ['/img/products/boneless.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'camisetas', sizes: ['S', 'M', 'L', 'XL', 'XXL'], colors: ['Blanco', 'Negro', 'Gris', 'Azul'], inStock: true, featured: true },
+    { id: '7', name: 'Sport Shorts', price: 39.99, description: 'Shorts deportivos ligeros y cómodos.', images: ['/img/products/sport-short.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'shorts', sizes: ['S', 'M', 'L', 'XL', 'XXL'], colors: ['Negro', 'Gris', 'Azul Marino', 'Rojo'], inStock: true, featured: true },
+    { id: '8', name: 'Urban Backpack', price: 89.99, description: 'Mochila urbana resistente y versátil.', images: ['/img/products/urban-backpack.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'backpacks', sizes: ['Único'], colors: ['Negro', 'Gris', 'Azul Marino'], inStock: true, featured: true },
+    { id: '9', name: 'Floral Summer Dress', price: 79.99, description: 'Vestido ligero y fresco con estampado floral.', images: ['/img/products/floral-dress.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'dresses', sizes: ['XS', 'S', 'M', 'L', 'XL'], colors: ['Rosa', 'Amarillo', 'Blanco'], inStock: true, featured: true, tags: ['new'] },
+    { id: '10', name: 'Classic Leather Jacket', price: 149.99, description: 'Chaqueta de cuero clásico para hombre, corte entallado y elegante.', images: ['/img/products/leather-jacket.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'jackets', sizes: ['S', 'M', 'L', 'XL'], colors: ['Negro', 'Marrón'], inStock: true, featured: true, tags: ['bestseller'] },
+    { id: '11', name: 'Slim Fit Chinos', price: 69.99, description: 'Pantalones chinos de corte slim, cómodos y versátiles.', images: ['/img/products/chinos.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'pants', sizes: ['30', '32', '34', '36', '38'], colors: ['Beige', 'Azul Marino', 'Gris'], inStock: true },
+    { id: '12', name: 'Leather Crossbody Bag', price: 119.99, description: 'Bolso de cuero para mujer, compacto y elegante.', images: ['/img/products/crossbody-bag.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'bags', sizes: ['Único'], colors: ['Negro', 'Marrón', 'Camel'], inStock: true, featured: true },
+    { id: '13', name: 'Striped Hoodie', price: 69.99, description: 'Sudadera con rayas horizontales, cómoda y moderna.', images: ['/img/products/striped-hoodie.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL'], colors: ['Gris', 'Azul', 'Negro'], inStock: true },
+    { id: '14', name: 'Denim Skirt', price: 49.99, description: 'Falda de mezclilla con corte casual.', images: ['/img/products/denim-skirt.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'skirts', sizes: ['XS', 'S', 'M', 'L'], colors: ['Azul', 'Negro'], inStock: true },
+    { id: '15', name: 'Running Sneakers', price: 89.99, description: 'Zapatillas deportivas para hombre, ligeras y cómodas.', images: ['/img/products/running-sneakers.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'shoes', sizes: ['40', '41', '42', '43', '44'], colors: ['Blanco', 'Negro', 'Gris'], inStock: true },
+    { id: '16', name: 'Gold Bracelet', price: 59.99, description: 'Pulsera dorada elegante, ajustable y moderna.', images: ['/img/products/gold-bracelet.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'bracelets', sizes: ['Único'], colors: ['Dorado'], inStock: true },
+    { id: '17', name: 'Oversized Hoodie', price: 79.99, description: 'Sudadera oversize unisex con estilo urbano.', images: ['/img/products/oversized-hoodie.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL', 'XXL'], colors: ['Negro', 'Gris', 'Rosa'], inStock: true, tags: ['sale'] },
+    { id: '18', name: 'Leather Sneakers', price: 99.99, description: 'Zapatillas de cuero para hombre, cómodas y duraderas.', images: ['/img/products/leather-sneakers.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'shoes', sizes: ['40', '41', '42', '43', '44'], colors: ['Blanco', 'Negro'], inStock: true },
+    { id: '19', name: 'Minimalist Backpack', price: 109.99, description: 'Mochila minimalista de cuero y tela resistente.', images: ['/img/products/minimal-backpack.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'backpacks', sizes: ['Único'], colors: ['Negro', 'Gris'], inStock: true },
+    { id: '20', name: 'Crop Tee', price: 39.99, description: 'Camiseta corta para mujer, fresca y moderna.', images: ['/img/products/crop-tee.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'camisetas', sizes: ['XS', 'S', 'M', 'L'], colors: ['Blanco', 'Negro', 'Rosa'], inStock: true },
+    { id: '21', name: 'Classic White Shirt', price: 34.99, description: 'Camisa blanca clásica de algodón.', images: ['/img/products/classic-white-shirt.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'camisetas', sizes: ['S', 'M', 'L', 'XL'], colors: ['Blanco'], inStock: true },
+    { id: '22', name: 'Denim Jacket', price: 129.99, description: 'Chaqueta de mezclilla para hombre, corte moderno.', images: ['/img/products/denim-jacket.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'jackets', sizes: ['S', 'M', 'L', 'XL'], colors: ['Azul'], inStock: true },
+    { id: '23', name: 'Pleated Midi Skirt', price: 59.99, description: 'Falda midi plisada para mujer, elegante y fluida.', images: ['/img/products/pleated-skirt.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'skirts', sizes: ['XS', 'S', 'M', 'L'], colors: ['Negro', 'Beige'], inStock: true },
+    { id: '24', name: 'Graphic Tee', price: 29.99, description: 'Camiseta con estampado gráfico para hombre.', images: ['/img/products/graphic-tee.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'camisetas', sizes: ['S', 'M', 'L', 'XL'], colors: ['Blanco', 'Negro'], inStock: true },
+    { id: '25', name: 'Leather Handbag', price: 149.99, description: 'Bolso de cuero para mujer, espacioso y elegante.', images: ['/img/products/leather-handbag.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'bags', sizes: ['Único'], colors: ['Negro', 'Marrón'], inStock: true, featured: true },
+    { id: '26', name: 'Leather Belt', price: 39.99, description: 'Cinturón de cuero elegante y resistente.', images: ['/img/products/leather-belt.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'belts', sizes: ['S', 'M', 'L'], colors: ['Negro', 'Marrón'], inStock: true },
+    { id: '27', name: 'Sport Hoodie', price: 69.99, description: 'Hoodie deportivo cómodo, unisex.', images: ['/img/products/sport-hoodie.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL', 'XXL'], colors: ['Gris', 'Azul'], inStock: true },
+    { id: '28', name: 'Slim Fit Jeans', price: 99.99, description: 'Jeans de corte slim para hombre.', images: ['/img/products/slim-fit-jeans.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'jeans', sizes: ['30', '32', '34', '36', '38'], colors: ['Azul', 'Negro'], inStock: true },
+    { id: '29', name: 'Hooded Windbreaker', price: 109.99, description: 'Cortaviento con capucha para hombre.', images: ['/img/products/windbreaker.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'jackets', sizes: ['S', 'M', 'L', 'XL'], colors: ['Negro', 'Azul'], inStock: true },
+    { id: '31', name: 'Tie-Dye Tee', price: 39.99, description: 'Camiseta tie-dye para mujer, divertida y cómoda.', images: ['/img/products/tie-dye-tee.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'camisetas', sizes: ['S', 'M', 'L', 'XL'], colors: ['Multicolor'], inStock: true },
+    { id: '30', name: 'Casual Sneakers', price: 79.99, description: 'Zapatillas casuales para mujer, cómodas y modernas.', images: ['/img/products/casual-sneakers.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'shoes', sizes: ['36', '37', '38', '39', '40'], colors: ['Blanco', 'Negro', 'Gris'], inStock: true },
+    { id: '32', name: 'Backpack Classic', price: 79.99, description: 'Mochila clásica resistente y funcional.', images: ['/img/products/backpack-classic.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'backpacks', sizes: ['Único'], colors: ['Negro', 'Azul'], inStock: true },
+    { id: '33', name: 'Cotton Hoodie', price: 59.99, description: 'Sudadera de algodón para mujer, cómoda y versátil.', images: ['/img/products/cotton-hoodie.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL'], colors: ['Rosa', 'Gris', 'Negro'], inStock: true },
+    { id: '34', name: 'Leather Bracelet', price: 29.99, description: 'Pulsera de cuero para hombre, ajustable.', images: ['/img/products/leather-bracelet.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'bracelets', sizes: ['Único'], colors: ['Negro', 'Marrón'], inStock: true },
+    { id: '35', name: 'High Waist Jeans', price: 89.99, description: 'Jeans de talle alto para mujer.', images: ['/img/products/high-waist-jeans.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'jeans', sizes: ['28', '30', '32', '34'], colors: ['Azul', 'Negro'], inStock: true },
+    { id: '36', name: 'Ankle Boots', price: 99.99, description: 'Botines elegantes para mujer.', images: ['/img/products/ankle-boots.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'shoes', sizes: ['36', '37', '38', '39', '40'], colors: ['Negro', 'Marrón'], inStock: true },
+    { id: '37', name: 'Sports Watch', price: 129.99, description: 'Reloj deportivo con cronómetro y resistencia al agua.', images: ['/img/products/sports-watch.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'watches', sizes: ['Único'], colors: ['Negro', 'Gris'], inStock: true },
+    { id: '38', name: 'Puffer Jacket', price: 159.99, description: 'Chaqueta acolchada para hombre, ideal para invierno.', images: ['/img/products/puffer-jacket.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'jackets', sizes: ['M', 'L', 'XL', 'XXL'], colors: ['Negro', 'Azul Marino'], inStock: true },
+    { id: '39', name: 'Maxi Dress', price: 129.99, description: 'Vestido largo elegante para mujer.', images: ['/img/products/maxi-dress.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'dresses', sizes: ['S', 'M', 'L', 'XL'], colors: ['Rojo', 'Negro'], inStock: true, featured: true },
+    { id: '40', name: 'Cropped Hoodie', price: 69.99, description: 'Hoodie corto para mujer, estilo urbano.', images: ['/img/products/cropped-hoodie.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'hoodies', sizes: ['S', 'M', 'L'], colors: ['Negro', 'Rosa'], inStock: true },
+    { id: '41', name: 'Classic Sneakers', price: 89.99, description: 'Zapatillas clásicas para hombre.', images: ['/img/products/classic-sneakers.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'shoes', sizes: ['40', '41', '42', '43', '44'], colors: ['Blanco', 'Negro'], inStock: true },
+    { id: '42', name: 'Denim Shorts', price: 49.99, description: 'Shorts de mezclilla para mujer, casual y frescos.', images: ['/img/products/denim-shorts.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'shorts', sizes: ['S', 'M', 'L', 'XL'], colors: ['Azul', 'Negro'], inStock: true },
+    { id: '43', name: 'Wool Scarf', price: 39.99, description: 'Bufanda de lana suave y cálida.', images: ['/img/products/wool-scarf.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'scarves', sizes: ['Único'], colors: ['Gris', 'Negro'], inStock: true },
+    { id: '44', name: 'Pleated Dress', price: 99.99, description: 'Vestido plisado elegante para mujer.', images: ['/img/products/pleated-dress.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'dresses', sizes: ['S', 'M', 'L'], colors: ['Azul', 'Rosa'], inStock: true },
+    { id: '45', name: 'Graphic Hoodie', price: 79.99, description: 'Hoodie con estampado gráfico, cómodo y moderno.', images: ['/img/products/graphic-hoodie.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL'], colors: ['Negro', 'Gris'], inStock: true },
+    { id: '46', name: 'Casual Backpack', price: 69.99, description: 'Mochila casual y resistente, unisex.', images: ['/img/products/casual-backpack.jpg', '/img/bg-hero.webp'], category: 'accessories', subcategory: 'backpacks', sizes: ['Único'], colors: ['Negro', 'Gris'], inStock: true },
+    { id: '47', name: 'Leather Sneakers Women', price: 99.99, description: 'Zapatillas de cuero para mujer, elegantes y cómodas.', images: ['/img/products/leather-sneakers-women.jpg', '/img/bg-hero.webp'], category: 'women', subcategory: 'shoes', sizes: ['36', '37', '38', '39', '40'], colors: ['Blanco', 'Negro'], inStock: true },
+    { id: '48', name: 'Slim Fit Hoodie', price: 79.99, description: 'Hoodie slim fit para hombre, diseño moderno.', images: ['/img/products/slim-hoodie.jpg', '/img/bg-hero.webp'], category: 'men', subcategory: 'hoodies', sizes: ['S', 'M', 'L', 'XL'], colors: ['Negro', 'Gris', 'Azul'], inStock: true },
 ];
