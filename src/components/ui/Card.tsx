@@ -1,6 +1,7 @@
 import { Product } from "@/types/product";
 import { Bookmark, Eye, ShoppingBag } from "lucide-react";
 import Image from "next/image";
+import { FavoriteButton } from "./FavButton";
 
 interface ProductCardProps {
     product: Product;
@@ -21,7 +22,7 @@ export const Card: React.FC<ProductCardProps> = ({ product, addToCart }) => {
 
                 <div className="absolute top-2 right-2 flex flex-col space-x-2 text-gray-400">
                     <button className="p-2 hover:text-[var(--color1)] cursor-pointer">
-                        <Bookmark size={20} />
+                        <FavoriteButton product={product} />
                     </button>
                     <button className="p-2 hover:text-[var(--color1)] cursor-pointer">
                         <Eye size={20} />

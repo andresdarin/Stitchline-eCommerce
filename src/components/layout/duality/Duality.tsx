@@ -12,7 +12,7 @@ export const Duality = () => {
                     className="object-cover object-center -z-10"
                 />
                 <h1 className="text-white text-[4rem] font-[100] uppercase relative z-10 hover:text-[var(--color1)] ">Man</h1>
-                <CTA href="#" variant="primary" className="mt-6 relative z-10">Shop Now</CTA>
+                <CTA href="Man" variant="primary" className="mt-6 relative z-10">Shop Now</CTA>
             </div>
 
 
@@ -24,7 +24,7 @@ export const Duality = () => {
                     className="object-cover object-center -z-10"
                 />
                 <h1 className="text-white text-[4rem] font-[100] uppercase relative z-10 hover:text-[var(--color1)]">Woman</h1>
-                <CTA href="#" variant="primary" className="mt-6 relative z-10">Shop Now</CTA>
+                <CTA href="Woman" variant="primary" className="mt-6 relative z-10">Shop Now</CTA>
             </div>
         </div>
     );

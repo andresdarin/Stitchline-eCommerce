@@ -3,8 +3,8 @@ import Image from "next/image"
 
 export const Vlog = () => {
     return (
-        <div className=" flex flex-row p-24 pt-10 font-light">
-            <div className="flex flex-row gap-10">
+        <div className=" flex flex-row p-30 font-light">
+            <div className="flex flex-row gap-10 pb-30">
                 <Image
                     src="/img/Clara.jpg"
                     alt="Newsletter Banner"

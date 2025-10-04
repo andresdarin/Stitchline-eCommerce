@@ -16,14 +16,20 @@ export const UserIcons: React.FC = () => {
         <div className="relative flex items-center gap-4 text-[var(--color4)]">
 
             {/* Buscador */}
-            <div className="flex items-center gap-1 rounded-none p-2 ">
+            <div className="flex items-center gap-1 p-2">
                 <SearchInput
                     value={searchTerm}
                     onChange={setSearchTerm}
-                    className="h-6 w-24 text-[var(--color4)]"
+                    className="
+                        h-6 w-24 text-[var(--color4)]
+                        border-0 focus:border-b
+                        focus:outline-none focus:border-b-black
+                        
+                        "
                 />
                 <Search size={20} />
             </div>
+
 
             {/* Carrito */}
             <div className="relative">

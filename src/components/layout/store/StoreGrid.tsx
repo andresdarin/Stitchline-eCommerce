@@ -11,7 +11,11 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/slices/cartSlice";
 import { AppDispatch } from "@/redux/store";
 
-const StoreGrid: React.FC = () => {
+interface StoreGridProps {
+    fixedCategory?: string; // ← nueva prop opcional
+}
+
+const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
     const dispatch = useDispatch<AppDispatch>();
     const { filters, setCategory, setSubcategory, setSize, setColor, setPerPage, setPage } = useStoreFilters();
 
@@ -20,19 +24,58 @@ const StoreGrid: React.FC = () => {
     const sizes = ["All", ...extractSizes(products)];
     const colors = ["All", ...extractColors(products)];
 
-    const { productsFiltered, total, totalPages } = useProducts(products, filters);
+    // ✅ Si hay una categoría fija, aplicarla directamente
+    const activeCategory = fixedCategory || filters.category;
 
-    useEffect(() => setPerPage(8), [setPerPage]);
+    const { productsFiltered, total, totalPages } = useProducts(products, {
+        ...filters,
+        category: activeCategory,
+    });
+
+    useEffect(() => {
+        setPerPage(8);
+        if (fixedCategory) setCategory(fixedCategory);
+    }, [setPerPage, setCategory, fixedCategory]);
 
     return (
         <div className="p-50">
             {/* filtros */}
             <div className="flex justify-end">
                 <div className="flex flex-wrap gap-0 mb-6 overflow-visible">
-                    <Dropdown options={categories} value={filters.category ?? "Category"} onChange={setCategory} placeholder="Category" className="border border-black rounded-none w-40" />
-                    <Dropdown options={subcategories} value={filters.subcategory ?? "Item"} onChange={(v) => setSubcategory(v === "All" ? undefined : v)} placeholder="Subcategory" className="border border-l-0 border-black rounded-none w-40" />
-                    <Dropdown options={sizes} value={filters.size ?? "Size"} onChange={(v) => setSize(v === "All" ? undefined : v)} placeholder="Size" className="border border-l-0 border-black rounded-none w-40" />
-                    <Dropdown options={colors} value={filters.color ?? "Color"} onChange={(v) => setColor(v === "All" ? undefined : v)} placeholder="Color" className="border border-l-0 border-black rounded-none w-40" />
+                    {/* Oculta el dropdown de categoría si está fija */}
+                    {!fixedCategory && (
+                        <Dropdown
+                            options={categories}
+                            value={filters.category ?? "Category"}
+                            onChange={setCategory}
+                            placeholder="Category"
+                            className="border border-black rounded-none w-40"
+                        />
+                    )}
+
+                    <Dropdown
+                        options={subcategories}
+                        value={filters.subcategory ?? "Item"}
+                        onChange={(v) => setSubcategory(v === "All" ? undefined : v)}
+                        placeholder="Subcategory"
+                        className={`border ${!fixedCategory ? "border-l-0" : ""} border-black rounded-none w-40`}
+                    />
+
+                    <Dropdown
+                        options={sizes}
+                        value={filters.size ?? "Size"}
+                        onChange={(v) => setSize(v === "All" ? undefined : v)}
+                        placeholder="Size"
+                        className="border border-l-0 border-black rounded-none w-40"
+                    />
+
+                    <Dropdown
+                        options={colors}
+                        value={filters.color ?? "Color"}
+                        onChange={(v) => setColor(v === "All" ? undefined : v)}
+                        placeholder="Color"
+                        className="border border-l-0 border-black rounded-none w-40"
+                    />
                 </div>
             </div>
 
@@ -43,7 +86,9 @@ const StoreGrid: React.FC = () => {
                         <Card key={product.id} product={product} addToCart={(p) => dispatch(addToCart(p))} />
                     ))
                 ) : (
-                    <div className="col-span-full text-center py-20 text-gray-500">No products found for the selected filters.</div>
+                    <div className="col-span-full text-center py-20 text-gray-500">
+                        No products found for the selected filters.
+                    </div>
                 )}
             </div>
 
