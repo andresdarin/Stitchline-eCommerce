@@ -1,4 +1,3 @@
-import CTA from "@/components/ui/CTA";
 import CurvedLoop from "@/components/ui/CurvedLoop";
 
 const BannerBelowHero = () => {

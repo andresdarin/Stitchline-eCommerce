@@ -3,7 +3,7 @@ import { SearchInput } from "@/components/ui/SearchInput";
 import { selectCartItems, selectCartTotal } from "@/redux/selectors";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart, increaseQuantity, decreaseQuantity, clearCart } from "@/redux/slices/cartSlice";
+import { clearCart } from "@/redux/slices/cartSlice";
 import { removeFavorite, clearFavorites } from "@/redux/slices/favSlice";
 import { RootState } from "@/redux/store";
 

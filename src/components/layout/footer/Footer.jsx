@@ -1,6 +1,4 @@
-import SplitText from "@/components/ui/SplitText"
-import { TruckElectric, Undo2, Shield, MapPinned, ArrowRight } from "lucide-react"
-import { FaGithub, FaInstagram, FaLaptopCode } from "react-icons/fa";
+import { ArrowRight } from "lucide-react"
 import { Features } from "./Features";
 import { Support } from "./Support";
 import { Company } from "./Company";

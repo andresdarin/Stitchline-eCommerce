@@ -1,6 +1,3 @@
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import SplitText from "../../ui/SplitText";
 import { NewsletterWrapper } from "./NLWrapper";
 import { NewsletterContent } from "./NLContent";
 import { NewsletterForm } from "./NLForm";

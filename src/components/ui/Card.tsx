@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Product } from "@/types/product";
-import { Bookmark, Eye, ShoppingBag } from "lucide-react";
+import { Eye, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { FavoriteButton } from "./FavButton";
 import { Modal } from "./Modal";
