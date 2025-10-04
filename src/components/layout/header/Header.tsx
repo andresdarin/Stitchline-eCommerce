@@ -12,7 +12,6 @@ export const Header = () => {
                     <Logo />
                     <NavLinks />
                 </section>
-
                 <section className="flex items-center space-x-4">
                     <BurguerMenu />
                     <UserIcons />

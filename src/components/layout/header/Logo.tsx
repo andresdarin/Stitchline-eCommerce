@@ -4,13 +4,14 @@ import Link from "next/link"
 
 export const Logo = () => {
     return (
-        <Link href="/">
+        <Link href="/HomePage">
             <Image
                 src='/favicon.ico'
                 alt='Stitchline Logo'
                 width={50}
                 height={50}
                 className="object-contain"
+
             />
         </Link>
     )

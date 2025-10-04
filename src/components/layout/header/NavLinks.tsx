@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const navItems = [
-    { label: 'Hombre', href: '/products/hombre' },
-    { label: 'Mujer', href: '/products/mujer' },
-    { label: 'Accesorios', href: '/products/accesorios' },
-    { label: 'Novedades', href: '/products/novedades' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'About', href: '/about' },
+    { label: 'Hombre', href: '/Man' },
+    { label: 'Mujer', href: '/Woman' },
+    { label: 'Accesorios', href: '/Accessories' },
+    { label: 'Novedades', href: '/NewArrivals' },
+    { label: 'Blog', href: '/Blog' },
+    { label: 'About', href: '/About' },
 ];
 
 export const NavLinks = () => {

@@ -49,6 +49,7 @@ export const Card: React.FC<ProductCardProps> = ({ product, addToCart }) => {
                         <Eye size={20} />
                     </button>
                 </div>
+
             </div>
 
             {/* Modal de detalle */}
@@ -118,6 +119,20 @@ export const Card: React.FC<ProductCardProps> = ({ product, addToCart }) => {
                     </div>
                 </div>
             </Modal>
+            <div className="grid grid-cols-6 border border-black">
+                <div className="p-4 col-span-5">
+                    <h2 className="text-sm uppercase font-bold">{product?.name}</h2>
+                    <p className="text-sm text-gray-600">${product?.price}</p>
+                </div>
+                <div className="flex items-center justify-center p-4 border-l border-black">
+                    <button
+                        className="flex items-center justify-center text-[var(--color1)]"
+                        onClick={() => addToCart(product)} // <- agregamos al carrito
+                    >
+                        <ShoppingBag className="w-5 h-5" />
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
