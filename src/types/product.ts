@@ -15,3 +15,7 @@ export type Product = {
     tags?: string[];
 };
 
+export interface ProductItem extends Product {
+    quantity: number;
+}
+

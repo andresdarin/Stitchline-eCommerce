@@ -8,6 +8,7 @@ import { useStoreFilters } from "@/hooks/useStoreFilters";
 import { useProducts } from "@/hooks/useProducts";
 import { extractCategories, extractSubcategories, extractSizes, extractColors } from "@/utils/productHelpers";
 import { Pagination } from "./Pagination";
+import { useProductCart } from "@/hooks/useCart";
 
 const StoreGrid: React.FC = () => {
     const {
@@ -29,6 +30,9 @@ const StoreGrid: React.FC = () => {
 
     const { productsFiltered, total, totalPages } = useProducts(products, filters);
 
+    const { handleAddToCart } = useProductCart();
+
+
     // optionally change perPage if you want (ej):
     useEffect(() => {
         setPerPage(8);
@@ -38,7 +42,7 @@ const StoreGrid: React.FC = () => {
         <div className="p-50">
             {/* filtros */}
             <div className="flex justify-end">
-                <div className="flex flex-wrap w-1/2 gap-0 mb-6 overflow-visible">
+                <div className="flex flex-wrap gap-0 mb-6 overflow-visible">
                     <Dropdown
                         options={categories}
                         value={filters.category ?? "Category"}
@@ -74,7 +78,7 @@ const StoreGrid: React.FC = () => {
             {/* grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {productsFiltered.length ? (
-                    productsFiltered.map((product) => <Card key={product.id} product={product} />)
+                    productsFiltered.map((product) => <Card key={product.id} product={product} addToCart={handleAddToCart} />)
                 ) : (
                     <div className="col-span-full text-center py-20 text-gray-500">No products found for the selected filters.</div>
                 )}

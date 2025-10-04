@@ -1,12 +1,13 @@
-import { ShoppingBag, Bookmark, Eye } from "lucide-react"
-import { Product } from '../../types/product';
+import { Product } from "@/types/product";
+import { Bookmark, Eye, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 
 interface ProductCardProps {
     product: Product;
+    addToCart: (product: Product) => void; // <- aquí
 }
 
-export const Card: React.FC<ProductCardProps> = ({ product }: ProductCardProps) => {
+export const Card: React.FC<ProductCardProps> = ({ product, addToCart }) => {
     return (
         <div className="flex flex-col overflow-hidden cursor-pointer h-[620px]">
             <div className="relative h-[100%] w-full">
@@ -18,7 +19,6 @@ export const Card: React.FC<ProductCardProps> = ({ product }: ProductCardProps) 
                     className="border border-[var(--color1)] border-b-0"
                 />
 
-                {/* Overlay de iconos */}
                 <div className="absolute top-2 right-2 flex flex-col space-x-2 text-gray-400">
                     <button className="p-2 hover:text-[var(--color1)] cursor-pointer">
                         <Bookmark size={20} />
@@ -35,11 +35,13 @@ export const Card: React.FC<ProductCardProps> = ({ product }: ProductCardProps) 
                     <p className="text-sm text-gray-600">${product?.price}</p>
                 </div>
                 <div className="flex items-center justify-center p-4 border-l border-black">
-                    <button className="flex items-center justify-center text-[var(--color1)]">
+                    <button
+                        className="flex items-center justify-center text-[var(--color1)]"
+                        onClick={() => addToCart(product)} // <- agregamos al carrito
+                    >
                         <ShoppingBag className="w-5 h-5" />
                     </button>
                 </div>
-
             </div>
         </div>
     )
