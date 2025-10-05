@@ -2,19 +2,25 @@ import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./slices/cartSlice";
 import favsReducer from "./slices/favSlice";
 import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // Usa localStorage (web)
+import storage from "redux-persist/lib/storage";
 
-// Configuración de persistencia solo para favs
+// Configuración de persistencia para carrito
+const cartPersistConfig = {
+    key: "cart",
+    storage,
+};
+
 const favsPersistConfig = {
     key: "favs",
     storage,
 };
 
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
 const persistedFavsReducer = persistReducer(favsPersistConfig, favsReducer);
 
 export const store = configureStore({
     reducer: {
-        cart: cartReducer,
+        cart: persistedCartReducer,
         favs: persistedFavsReducer,
     },
 });

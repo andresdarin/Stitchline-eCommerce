@@ -14,7 +14,7 @@ export const Card: React.FC<ProductCardProps> = ({ product, addToCart }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     return (
-        <div className="flex flex-col overflow-hidden cursor-pointer h-[620px]">
+        <div className="flex flex-col overflow-hidden cursor-default h-[620px]">
             <div className="relative h-[100%] w-full">
                 {/* TAG arriba a la izquierda */}
                 {product.tags && product.tags.length > 0 && (
@@ -129,7 +129,7 @@ export const Card: React.FC<ProductCardProps> = ({ product, addToCart }) => {
                         className="flex items-center justify-center text-[var(--color1)]"
                         onClick={() => addToCart(product)} // <- agregamos al carrito
                     >
-                        <ShoppingBag className="w-5 h-5" />
+                        <ShoppingBag className="w-5 h-5 cursor-pointer" />
                     </button>
                 </div>
             </div>
