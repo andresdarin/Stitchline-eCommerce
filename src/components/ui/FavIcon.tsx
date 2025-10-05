@@ -4,7 +4,7 @@ import { removeFavorite, clearFavorites } from "@/redux/slices/favSlice";
 import { RootState } from "@/redux/store";
 import { useState } from "react";
 
-export const FavsIconPanel: React.FC = () => {
+export const FavsIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
     const [favsOpen, setFavsOpen] = useState(false);
     const dispatch = useDispatch();
     const favs = useSelector((state: RootState) => state.favs.items);
@@ -14,7 +14,7 @@ export const FavsIconPanel: React.FC = () => {
             <button className="p-2 relative cursor-pointer" onClick={() => setFavsOpen(prev => !prev)}>
                 <Bookmark size={20} />
                 {favs.length > 0 && (
-                    <span className="ml-1 text-xs font-bold bg-black rounded-full w-4 h-4 flex items-center justify-center absolute -top-2 -right-2 cursor-pointer">
+                    <span className={`ml-1 text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center absolute -top-2 -right-2 cursor-pointer ${badgeColor}`}>
                         {favs.length}
                     </span>
                 )}

@@ -10,7 +10,7 @@ export const Vlog = () => {
                     alt="Newsletter Banner"
                     width={450}
                     height={100}
-                    className="object-cover pl-10"
+                    className="object-cover ml-10 border border-[var(--color1)]"
 
                 />
                 <Image
@@ -18,7 +18,7 @@ export const Vlog = () => {
                     alt="Newsletter Banner"
                     width={450}
                     height={100}
-                    className="object-cover pr-10"
+                    className="object-cover mr-50 border border-[var(--color1)]"
 
                 />
             </div>

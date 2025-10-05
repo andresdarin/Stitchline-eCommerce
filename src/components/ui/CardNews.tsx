@@ -16,7 +16,7 @@ export const NewsCard: React.FC<NewsProps> = ({ newsItem }: NewsProps) => {
                     alt={newsItem.title}
                     layout="fill"
                     objectFit="cover"
-                    className="-z-1"
+                    className="-z-1 border border-[var(--color1)]"
                 />
             </div>
 

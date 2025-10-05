@@ -4,7 +4,7 @@ import { selectCartItems, selectCartTotal } from "@/redux/selectors";
 import { clearCart, decreaseQuantity, increaseQuantity, removeFromCart } from "@/redux/slices/cartSlice";
 import { useState } from "react";
 
-export const CartIconPanel: React.FC = () => {
+export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
     const [cartOpen, setCartOpen] = useState(false);
     const dispatch = useDispatch();
     const cart = useSelector(selectCartItems);
@@ -18,7 +18,7 @@ export const CartIconPanel: React.FC = () => {
             >
                 <ShoppingCartIcon size={20} />
                 {cart.length > 0 && (
-                    <span className="ml-1 text-xs font-bold bg-black rounded-full w-4 h-4 flex items-center justify-center absolute -top-2 -right-2">
+                    <span className={`ml-1 text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center absolute -top-2 -right-2 ${badgeColor}`}>
                         {cart.length}
                     </span>
                 )}
