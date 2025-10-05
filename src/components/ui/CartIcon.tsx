@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems, selectCartTotal } from "@/redux/selectors";
 import { clearCart, decreaseQuantity, increaseQuantity, removeFromCart } from "@/redux/slices/cartSlice";
 import { useState } from "react";
+import { Checkout } from '../layout/store/CheckOut';
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
     const [cartOpen, setCartOpen] = useState(false);
@@ -78,12 +80,23 @@ export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = 
 
                             <div className="mt-4 flex justify-between items-center">
                                 <p className="font-bold text-right">Total: ${cartTotal}</p>
-                                <button
-                                    className="border border-black rounded-none px-3 py-1 hover:bg-black hover:text-white hover:cursor-pointer "
-                                    onClick={() => dispatch(clearCart())}
-                                >
-                                    <span className="w-16 text-center inline-block">Vaciar</span>
-                                </button>
+                                <div className="flex gap-2">
+                                    <button
+                                        className="border border-black rounded-none px-3 py-1 hover:bg-black hover:text-white hover:cursor-pointer "
+                                        onClick={() => dispatch(clearCart())}
+                                    >
+                                        <span className="w-16 text-center inline-block">Vaciar</span>
+                                    </button>
+                                    <button
+                                        className="border border-black rounded-none px-3 py-1 flex items-center justify-center hover:bg-black hover:text-white hover:cursor-pointer"
+                                        onClick={() => dispatch(clearCart())}
+                                    >
+                                        <span className="w-16 h-6 flex items-center justify-center">
+                                            <FaArrowRightLong />
+                                        </span>
+                                    </button>
+                                </div>
+
                             </div>
                         </>
                     )}
