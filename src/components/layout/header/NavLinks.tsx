@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navItems = [
-    { label: 'Hombre', href: '/Man' },
-    { label: 'Mujer', href: '/Woman' },
-    { label: 'Accesorios', href: '/Accessories' },
-    { label: 'Novedades', href: '/NewArrivals' },
+    { label: 'Man', href: '/Man' },
+    { label: 'Woman', href: '/Woman' },
+    { label: 'Accessories', href: '/Accessories' },
+    { label: 'New Arrivals', href: '/NewArrivals' },
     { label: 'Blog', href: '/Blog' },
     { label: 'About', href: '/About' },
 ];

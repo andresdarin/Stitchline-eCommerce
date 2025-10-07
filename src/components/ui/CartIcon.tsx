@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems, selectCartTotal } from "@/redux/selectors";
 import { clearCart, decreaseQuantity, increaseQuantity, removeFromCart } from "@/redux/slices/cartSlice";
 import { useState } from "react";
-import { Checkout } from '../layout/store/CheckOut';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useRouter } from "next/router";
 
 export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
     const [cartOpen, setCartOpen] = useState(false);
     const dispatch = useDispatch();
     const cart = useSelector(selectCartItems);
     const cartTotal = useSelector(selectCartTotal);
+    const router = useRouter();
 
     return (
         <div className="relative">
@@ -89,7 +90,7 @@ export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = 
                                     </button>
                                     <button
                                         className="border border-black rounded-none px-3 py-1 flex items-center justify-center hover:bg-black hover:text-white hover:cursor-pointer"
-                                        onClick={() => dispatch(clearCart())}
+                                        onClick={() => router.push('/Checkout')}
                                     >
                                         <span className="w-16 h-6 flex items-center justify-center">
                                             <FaArrowRightLong />
@@ -105,3 +106,4 @@ export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = 
         </div>
     );
 };
+
