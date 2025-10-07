@@ -17,6 +17,7 @@
 */
 
 // pages/_app.tsx
+
 import type { AppProps } from "next/app";
 import "../app/globals.css";
 import { Provider } from "react-redux";

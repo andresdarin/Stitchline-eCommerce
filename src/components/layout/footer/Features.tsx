@@ -3,7 +3,7 @@ import { TruckElectric, Undo2, Shield, MapPinned } from "lucide-react";
 export const Features = () => {
   return (
     <div
-      className="grid grid-cols-4 w-full mt-16 h-20
+      className="grid grid-cols-4 w-full h-20
                  border border-black border-l-0 border-r-0 
                  divide-x divide-black"
     >

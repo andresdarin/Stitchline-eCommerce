@@ -1,8 +1,10 @@
+"use client";
+
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "@/redux/slices/cartSlice";
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { selectCartItems, selectCartTotal } from "@/redux/selectors";
-import { div } from "motion/react-client";
+import { useRouter } from "next/navigation";
 
 interface FormState {
     name: string;
@@ -14,10 +16,19 @@ export const Checkout = () => {
     const cart = useSelector(selectCartItems);
     const cartTotal = useSelector(selectCartTotal);
     const dispatch = useDispatch();
+    const router = useRouter();
 
-    // Formulario simple para datos del comprador
     const [form, setForm] = useState<FormState>({ name: "", email: "", address: "" });
     const [success, setSuccess] = useState(false);
+
+    useEffect(() => {
+        if (success) {
+            const timer = setTimeout(() => {
+                router.push("/HomePage");
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [success, router]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });

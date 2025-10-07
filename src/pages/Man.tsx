@@ -20,7 +20,7 @@ export const Man = () => {
                 <UserPanel />
             </div>
 
-            <StoreGrid />
+            <StoreGrid fixedCategory="men" />
             <ScrollVelocity
                 texts={[
                     'Discover men’s essentials crafted for movement, confidence, and everyday hustle.',
