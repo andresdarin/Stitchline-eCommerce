@@ -1,3 +1,4 @@
+'use client'
 
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "@/redux/slices/cartSlice";

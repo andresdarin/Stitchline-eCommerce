@@ -1,3 +1,6 @@
+'use client'
+
+
 import { selectCartItems, selectCartTotal } from "@/redux/selectors";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

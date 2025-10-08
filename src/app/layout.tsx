@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import { Red_Hat_Display, Inter } from "next/font/google";
 import "./globals.css";

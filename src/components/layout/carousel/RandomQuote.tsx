@@ -1,3 +1,6 @@
+'use client'
+
+
 // components/RandomQuote.tsx
 import { fashionQuotes } from "@/data/quotes";
 import { useEffect, useState } from "react";

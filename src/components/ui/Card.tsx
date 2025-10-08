@@ -1,3 +1,6 @@
+'use client'
+
+
 import { useState } from "react";
 import { Product } from "@/types/product";
 import { Eye, ShoppingBag } from "lucide-react";

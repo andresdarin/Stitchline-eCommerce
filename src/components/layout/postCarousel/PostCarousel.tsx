@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { posts } from "@/data/posts";
@@ -20,7 +21,7 @@ export const PostCarousel: React.FC = () => {
         // duración proporcional al ancho; mínimo 8s para que no vaya demasiado rápido
         const computed = Math.max(8, Math.round(singleWidth / SPEED_PX_PER_SEC));
         setDuration(computed);
-    }, [posts.length]);
+    }, [posts]);
 
     return (
         <div className="relative w-full overflow-hidden py-8">

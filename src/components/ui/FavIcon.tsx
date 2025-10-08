@@ -1,3 +1,5 @@
+'use client'
+
 import { Bookmark, X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavorite, clearFavorites } from "@/redux/slices/favSlice";

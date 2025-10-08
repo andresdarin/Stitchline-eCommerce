@@ -27,7 +27,7 @@ const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
     // ✅ Si hay una categoría fija, aplicarla directamente
     const activeCategory = fixedCategory || filters.category;
 
-    const { productsFiltered, total, totalPages } = useProducts(products, {
+    const { productsFiltered, totalPages } = useProducts(products, {
         ...filters,
         category: activeCategory,
     });

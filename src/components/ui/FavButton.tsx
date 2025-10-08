@@ -1,3 +1,4 @@
+'use client'
 // src/components/ui/FavoriteButton.tsx
 import { Bookmark } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";

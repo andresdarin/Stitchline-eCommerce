@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { products } from '../data/data';
 import { Product } from '@/types/product';

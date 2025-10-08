@@ -3,9 +3,6 @@ import { NewsletterContent } from "./NLContent";
 import { NewsletterForm } from "./NLForm";
 
 export const Newsletter = () => {
-    const handleAnimationComplete = () => {
-        // acción al terminar la animación
-    };
 
     return (
         <NewsletterWrapper background="/img/banner.jpg">

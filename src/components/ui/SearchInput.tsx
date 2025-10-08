@@ -2,7 +2,6 @@ import type { SearchInputProps } from '@/types/SearchInput'
 import React from 'react'
 
 export const SearchInput: React.FC<SearchInputProps> = ({
-    value,
     onChange,
     placeholder = "SEARCH",
     className
