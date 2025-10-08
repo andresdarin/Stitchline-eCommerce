@@ -10,3 +10,4 @@ export const Locations = () => {
         </div>
     );
 };
+export default Locations;

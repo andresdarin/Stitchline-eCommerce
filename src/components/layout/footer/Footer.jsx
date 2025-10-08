@@ -7,9 +7,7 @@ import { Bottom } from "./Bottom";
 import { Brand } from "./Brand";
 
 export const Footer = () => {
-    const handleAnimationComplete = () => {
-        // acción al terminar la animación
-    };
+
     return (
         <>
             <Features />
@@ -39,3 +37,4 @@ export const Footer = () => {
         </>
     )
 }
+export default Footer;

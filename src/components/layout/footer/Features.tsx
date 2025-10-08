@@ -26,3 +26,4 @@ export const Features = () => {
     </div>
   );
 };
+export default Features;

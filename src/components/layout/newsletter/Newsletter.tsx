@@ -18,3 +18,4 @@ export const Newsletter = () => {
         </NewsletterWrapper>
     );
 };
+export default Newsletter;

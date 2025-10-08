@@ -26,3 +26,4 @@ export const NewsletterContent = ({ title, subtitle, onAnimationComplete, childr
         </>
     );
 };
+export default NewsletterContent;

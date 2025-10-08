@@ -22,3 +22,5 @@ export const Logos: React.FC<LogosProps> = ({ logos }) => {
         </div>
     );
 };
+
+export default Logos;

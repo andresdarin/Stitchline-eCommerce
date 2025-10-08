@@ -12,3 +12,4 @@ export const NewsletterWrapper = ({ children, background }: NewsletterProps & { 
         </div>
     );
 };
+export default NewsletterWrapper;

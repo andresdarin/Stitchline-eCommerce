@@ -12,3 +12,4 @@ export const Bottom = () => {
         </div>
     );
 };
+export default Bottom;

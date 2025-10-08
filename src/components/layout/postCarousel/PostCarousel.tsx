@@ -87,3 +87,5 @@ export const PostCarousel: React.FC = () => {
         </div>
     );
 };
+
+export default PostCarousel;

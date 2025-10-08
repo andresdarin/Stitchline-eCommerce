@@ -24,3 +24,4 @@ export const NewsletterForm = ({ onSubmit }: NewsletterProps) => {
         </div>
     );
 };
+export default NewsletterForm;

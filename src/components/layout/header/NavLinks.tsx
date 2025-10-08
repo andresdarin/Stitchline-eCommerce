@@ -4,9 +4,7 @@ const navItems = [
     { label: 'Man', href: '/Man' },
     { label: 'Woman', href: '/Woman' },
     { label: 'Accessories', href: '/Accessories' },
-    { label: 'New Arrivals', href: '/NewArrivals' },
-    { label: 'Blog', href: '/Blog' },
-    { label: 'About', href: '/About' },
+    { label: 'About Us', href: '/About' },
 ];
 
 export const NavLinks = () => {

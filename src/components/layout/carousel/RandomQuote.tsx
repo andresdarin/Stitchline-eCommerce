@@ -28,3 +28,5 @@ export const RandomQuote: React.FC<RandomQuoteProps> = ({ interval = 2500, class
         </p>
     );
 };
+
+export default RandomQuote;

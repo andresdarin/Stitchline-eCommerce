@@ -46,3 +46,4 @@ export const NewsCarousel = () => {
         </div>
     );
 };
+export default NewsCarousel;

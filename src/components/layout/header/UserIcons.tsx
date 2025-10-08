@@ -24,4 +24,6 @@ export const UserIcons: React.FC = () => {
             <UserPanel />
         </div>
     );
+
 };
+export default UserIcons;

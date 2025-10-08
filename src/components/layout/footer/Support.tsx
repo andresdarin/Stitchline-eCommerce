@@ -11,3 +11,4 @@ export const Support = () => {
         </div>
     );
 };
+export default Support;

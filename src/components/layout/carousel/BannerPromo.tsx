@@ -28,3 +28,4 @@ export const BannerPromo = () => {
         </div>
     )
 }
+export default BannerPromo;

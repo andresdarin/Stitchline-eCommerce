@@ -1,3 +1,5 @@
+'use client';
+
 import CurvedLoop from "@/components/ui/CurvedLoop";
 
 const BannerBelowHero = () => {

@@ -18,3 +18,4 @@ export const BrandCarousel = () => {
         </div>
     );
 };
+export default BrandCarousel;

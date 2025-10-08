@@ -1,5 +1,4 @@
 import { Footer } from "@/components/layout/footer/Footer"
-import { Header } from "@/components/layout/header/Header";
 import StoreGrid from "@/components/layout/store/StoreGrid"
 import { CartIconPanel } from "@/components/ui/CartIcon";
 import { FavsIconPanel } from "@/components/ui/FavIcon";

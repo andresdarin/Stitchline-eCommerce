@@ -31,3 +31,4 @@ export const Vlog = () => {
         </div>
     )
 }
+export default Vlog;
