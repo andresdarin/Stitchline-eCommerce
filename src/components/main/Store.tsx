@@ -1,5 +1,5 @@
 import { Footer } from '@/components/layout/footer/Footer';
-import StoreGrid from '../components/layout/store/StoreGrid';
+import StoreGrid from '../layout/store/StoreGrid';
 export const Store = () => {
     return (
         <>

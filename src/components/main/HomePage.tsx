@@ -4,7 +4,7 @@ import StoreGrid from '@/components/layout/store/StoreGrid';
 import Duality from '@/components/layout/duality/Duality';
 import { BrandCarousel } from '@/components/layout/carousel/BrandCarousel';
 import { NewsCarousel } from '@/components/layout/news/News';
-import { Newsletter } from '../components/layout/newsletter/Newsletter';
+import { Newsletter } from '../layout/newsletter/Newsletter';
 import { Vlog } from '@/components/layout/vlog/Vlog';
 import { PostCarousel } from '@/components/layout/postCarousel/PostCarousel';
 import { Footer } from '@/components/layout/footer/Footer';
