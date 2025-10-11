@@ -1,6 +1,5 @@
 import Image from "next/image";
 import type { Logo } from "@/types/logo";
-import type { logos } from "@/data/logos";
 
 interface LogosProps {
     logos: Logo[];
