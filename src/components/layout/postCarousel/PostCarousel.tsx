@@ -40,7 +40,7 @@ export const PostCarousel: React.FC = () => {
                         animation: `marquee ${duration}s linear infinite`,
                         animationPlayState: isPaused ? "paused" : "running",
                     }}
-                    aria-hidden={false}
+
                 >
                     {/* duplicamos posts para loop continuo */}
                     {[...posts, ...posts].map((post, i) => (

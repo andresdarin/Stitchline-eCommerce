@@ -3,8 +3,8 @@ import { EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
-import { NewsCard } from "../../ui/CardNews";
-import { news } from "../../../data/news";
+import { NewsCard } from "@/components/ui/CardNews";
+import { news } from "@/data/news";
 
 export const NewsCarousel = () => {
     return (
