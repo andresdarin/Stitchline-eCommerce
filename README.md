@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 👗 Stitchline eCommerce
 
-## Getting Started
+Un e-commerce de ropa premium con diseño moderno y experiencia de usuario fluida. Construido con las últimas tecnologías web para ofrecer una experiencia de compra excepcional.
 
-First, run the development server:
+🌐 **Demo en vivo**: [stitchline.vercel.app](https://stitchline.vercel.app/HomePage)
 
+## ✨ Características
+
+- 🛍️ **Catálogo de productos** con sistema de favoritos
+- 🛒 **Carrito de compras** con Redux para manejo de estado
+- 💳 **Proceso de checkout** completo
+- 📱 **Diseño completamente responsive**
+- 🎨 **Animaciones fluidas** con GSAP
+- 🔍 **Filtros y búsqueda** de productos
+- 📰 **Newsletter** y blog integrado
+- 🏷️ **Productos destacados** y nuevos lanzamientos
+
+## 🚀 Tecnologías
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Estilos**: Tailwind CSS 4
+- **Estado**: Redux Toolkit + Redux Persist
+- **Animaciones**: GSAP, Motion
+- **Iconos**: Lucide React, React Icons
+- **Carousels**: Swiper.js
+- **Desarrollo**: ESLint, PostCSS
+
+## 📦 Instalación
+
+### Prerrequisitos
+
+- Node.js 18+ 
+- npm, yarn, pnpm o bun
+
+### Configuración del proyecto
+
+1. **Clona el repositorio**
+```bash
+git clone https://github.com/andresdarin/Stitchline-eCommerce.git
+cd Stitchline-eCommerce
+```
+
+2. **Instala las dependencias**
+```bash
+npm install
+# o
+yarn install
+# o
+pnpm install
+# o
+bun install
+```
+
+3. **Ejecuta el servidor de desarrollo**
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
+# o
 pnpm dev
-# or
+# o
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Abre el navegador**
+Visita [http://localhost:3000](http://localhost:3000) para ver la aplicación.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Scripts Disponibles
 
-## Learn More
+```bash
+# Desarrollo
+npm run dev          # Inicia el servidor de desarrollo
 
-To learn more about Next.js, take a look at the following resources:
+# Producción
+npm run build        # Construye la aplicación para producción
+npm run start        # Inicia el servidor de producción
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Calidad de código
+npm run lint         # Ejecuta ESLint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Funcionalidades Principales
 
-## Deploy on Vercel
+### 🛍️ Sistema de Productos
+- Catálogo completo con imágenes y detalles
+- Sistema de favoritos persistente
+- Filtros por categoría y precio
+- Productos destacados y nuevos lanzamientos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🛒 Carrito de Compras
+- Agregar/eliminar productos
+- Modificar cantidades
+- Cálculo automático de totales
+- Persistencia con Redux Persist
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 💳 Proceso de Checkout
+- Formulario de datos personales
+- Resumen de compra
+- Confirmación de pedido
+- Redirección automática post-compra
+
+### 🎨 Experiencia de Usuario
+- Diseño responsive para todos los dispositivos
+- Navegación intuitiva
+- Carga optimizada de imágenes con Next.js Image
+
+## 🚀 Despliegue
+
+### Vercel
+[Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme):
+
+1. Conecta tu repositorio de GitHub
+2. Vercel detectará automáticamente que es un proyecto Next.js
+3. Despliega con un click!
+
+
+
+## 🤝 Contribución
+
+Las contribuciones son bienvenidas. Para contribuir:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+## 👨‍💻 Autor
+
+**Andrés Darín** - [@andresdarin](https://github.com/andresdarin)
+
+---
+
+⭐ ¡No olvides dar una estrella al proyecto si te gustó!
