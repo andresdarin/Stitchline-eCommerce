@@ -33,6 +33,7 @@ export const PostCarousel: React.FC = () => {
             >
                 {/* track: animación aplicada inline para controlar duration y pause */}
                 <div
+                    key={duration}
                     ref={trackRef}
                     className="flex items-center gap-4 will-change-transform"
                     style={{
