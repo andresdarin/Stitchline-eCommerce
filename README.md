@@ -52,12 +52,69 @@ bun install
 ```
 
 3. **Ejecuta el servidor de desarrollo**
+# 👗 Stitchline eCommerce
+
+Un e-commerce de ropa premium con diseño moderno y experiencia de usuario fluida. Construido con las últimas tecnologías web para ofrecer una experiencia de compra excepcional.
+
+🌐 **Demo en vivo**: [stitchline.vercel.app](https://stitchline.vercel.app/HomePage)
+
+## ✨ Características
+
+- 🛍️ **Catálogo de productos** con sistema de favoritos
+- 🛒 **Carrito de compras** con Redux para manejo de estado
+- 💳 **Proceso de checkout** completo
+- 📱 **Diseño completamente responsive**
+- 🎨 **Animaciones fluidas** con GSAP
+- 🔍 **Filtros y búsqueda** de productos
+- 📰 **Newsletter** y blog integrado
+- 🏷️ **Productos destacados** y nuevos lanzamientos
+
+## 🚀 Tecnologías
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Estilos**: Tailwind CSS 4
+- **Estado**: Redux Toolkit + Redux Persist
+- **Animaciones**: GSAP, Motion
+- **Iconos**: Lucide React, React Icons
+- **Carousels**: Swiper.js
+- **Desarrollo**: ESLint, PostCSS
+
+## 📦 Instalación
+
+### Prerrequisitos
+
+- Node.js 18+ 
+- npm, yarn, pnpm o bun
+
+### Configuración del proyecto
+
+1. **Clona el repositorio**
+```bash
+git clone https://github.com/andresdarin/Stitchline-eCommerce.git
+cd Stitchline-eCommerce
+```
+
+2. **Instala las dependencias**
+```bash
+npm install
+# o
+yarn install
+# o
+pnpm install
+# o
+bun install
+```
+
+3. **Ejecuta el servidor de desarrollo**
 ```bash
 npm run dev
 # o
+# o
 yarn dev
 # o
+# o
 pnpm dev
+# o
 # o
 bun dev
 ```
