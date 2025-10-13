@@ -24,7 +24,7 @@ export const Checkout = () => {
     useEffect(() => {
         if (success) {
             const timer = setTimeout(() => {
-                router.push("/HomePage");
+                router.push("/");
             }, 3000);
             return () => clearTimeout(timer);
         }
