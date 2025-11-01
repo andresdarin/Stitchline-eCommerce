@@ -1,5 +1,5 @@
 export type CardData = {
-    id: number;
+    id: number | string;
     title: string;
     description: string;
     image?: string;

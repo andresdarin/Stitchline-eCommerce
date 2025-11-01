@@ -4,6 +4,7 @@ import { PersonCard } from "@/components/ui/PersonCard";
 import { teamMembers } from "@/data/teamData";
 import PostCarousel from "../postCarousel/PostCarousel";
 import Footer from "../footer/Footer";
+import CardGrid from "@/components/ui/CardGrid";
 
 export const About = () => {
     return (
@@ -20,6 +21,7 @@ export const About = () => {
                     />
                 ))}
             </div>
+            <CardGrid />
             <PostCarousel />
             <Footer />
         </div>

@@ -24,7 +24,7 @@ export const PostCarousel: React.FC = () => {
     }, [posts]);
 
     return (
-        <div className="relative w-full overflow-hidden py-8">
+        <div className="relative w-full overflow-hidden py-8 my-20">
             {/* viewport */}
             <div
                 className="w-full"
