@@ -8,8 +8,8 @@ export const Logo = () => {
             <Image
                 src='/favicon.ico'
                 alt='Stitchline Logo'
-                width={50}
-                height={50}
+                width={32}
+                height={32}
                 className="object-contain"
 
             />

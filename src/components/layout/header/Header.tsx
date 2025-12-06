@@ -6,8 +6,8 @@ import { UserIcons } from './UserIcons'
 
 export const Header = () => {
     return (
-        <header className="w-full h-16 md:h-20 sticky top-0 z-50 shadow-sm">
-            <div className="w-full px-4 sm:px-6 lg:w-19/20 mx-auto h-full flex items-center justify-between border-b border-[var(--color3)]">
+        <header className="w-full h-16 md:h-20 sticky top-0 z-50">
+            <div className="w-full px-4 sm:px-6 lg:w-19/20 mx-auto h-full flex items-center justify-between border-b-0 md:border-b md:border-[var(--color3)]">
                 <section className="flex items-center space-x-2 sm:space-x-4 lg:space-x-8">
                     <div className="flex-shrink-0">
                         <Logo />
@@ -23,7 +23,9 @@ export const Header = () => {
                     <div className="block lg:hidden">
                         <BurguerMenu />
                     </div>
-                    <UserIcons />
+                    <div className="hidden md:flex">
+                        <UserIcons />
+                    </div>
                 </section>
             </div>
         </header>

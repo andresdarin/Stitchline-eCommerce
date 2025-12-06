@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Red_Hat_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "@/components/providers/ReduxProvider";
+import { PanelProvider } from "@/contexts/PanelContext";
 
 const redHatDisplay = Red_Hat_Display({
   variable: "--font-red-hat-display",
@@ -33,7 +34,9 @@ export default function RootLayout({
         className={`${redHatDisplay.variable} ${inter.variable} antialiased`}
       >
         <ReduxProvider>
-          {children}
+          <PanelProvider>
+            {children}
+          </PanelProvider>
         </ReduxProvider>
       </body>
     </html>

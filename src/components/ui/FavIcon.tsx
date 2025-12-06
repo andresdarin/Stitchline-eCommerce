@@ -4,16 +4,20 @@ import { Bookmark, X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavorite, clearFavorites } from "@/redux/slices/favSlice";
 import { RootState } from "@/redux/store";
-import { useState } from "react";
+import { usePanel } from "@/contexts/PanelContext";
 
 export const FavsIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
-    const [favsOpen, setFavsOpen] = useState(false);
+    const { favsOpen, setFavsOpen, setCartOpen, setProfileOpen } = usePanel();
     const dispatch = useDispatch();
     const favs = useSelector((state: RootState) => state.favs.items);
 
     return (
         <div className="relative">
-            <button className="p-2 relative cursor-pointer" onClick={() => setFavsOpen(prev => !prev)}>
+            <button className="p-2 relative cursor-pointer" onClick={() => {
+                setFavsOpen(!favsOpen);
+                setCartOpen(false);
+                setProfileOpen(false);
+            }}>
                 <Bookmark size={20} />
                 {favs.length > 0 && (
                     <span className={`ml-1 text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center absolute -top-2 -right-2 cursor-pointer ${badgeColor}`}>

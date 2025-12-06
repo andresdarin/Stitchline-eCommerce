@@ -4,22 +4,26 @@ import { ShoppingCartIcon, Plus, Minus, X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems, selectCartTotal } from "@/redux/selectors";
 import { clearCart, decreaseQuantity, increaseQuantity, removeFromCart } from "@/redux/slices/cartSlice";
-import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { useRouter } from "next/navigation"; // <-- CAMBIADO
+import { useRouter } from "next/navigation";
+import { usePanel } from "@/contexts/PanelContext";
 
 export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
-    const [cartOpen, setCartOpen] = useState(false);
+    const { cartOpen, setCartOpen, setFavsOpen, setProfileOpen } = usePanel();
     const dispatch = useDispatch();
     const cart = useSelector(selectCartItems);
     const cartTotal = useSelector(selectCartTotal);
-    const router = useRouter(); // <-- CAMBIADO
+    const router = useRouter();
 
     return (
         <div className="relative">
             <button
                 className="p-2 flex items-center justify-center cursor-pointer relative"
-                onClick={() => setCartOpen((prev) => !prev)}
+                onClick={() => {
+                    setCartOpen(!cartOpen);
+                    setFavsOpen(false);
+                    setProfileOpen(false);
+                }}
             >
                 <ShoppingCartIcon size={20} />
                 {cart.length > 0 && (

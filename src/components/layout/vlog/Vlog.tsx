@@ -23,8 +23,9 @@ export const Vlog = () => {
                 />
             </div>
             <div className="flex flex-col justify-center p-24 ml-50">
-                <h1 className="text-xl font-bold pb-6 font-light uppercase"> Meet The Artists Behind Stitchline Agatha & Clara</h1>
-                <p>Two timeless souls who stitch elegance and tradition into every fabric, always with a cup of Earl Grey at hand.</p>
+                <h1 className="text-xl font-bold uppercase pb-2">Meet The Artists Behind Stitchline</h1>
+                <h2 className="text-xl font-bold uppercase pb-6">Agatha & Clara</h2>
+                <p className="pb-6">Two timeless souls who stitch elegance and tradition into every fabric, always with a cup of Earl Grey at hand.</p>
                 <CTA href="#" variant="tertiary" className="mt-6">Get Inspired...</CTA>
             </div>
 
