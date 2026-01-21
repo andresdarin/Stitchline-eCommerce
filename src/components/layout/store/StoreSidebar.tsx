@@ -68,11 +68,10 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({
                             setCategory(cat);
                             setMobileOpen(false);
                         }}
-                        className={`block w-full text-left text-sm py-1 transition-colors ${
-                            filters.category === cat
+                        className={`block w-full text-left text-sm py-1 transition-colors ${filters.category === cat
                                 ? "font-bold underline decoration-1 underline-offset-4"
                                 : "text-gray-600 hover:text-black"
-                        }`}
+                            }`}
                     >
                         {cat.charAt(0).toUpperCase() + cat.slice(1)}
                     </button>
@@ -88,11 +87,10 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({
                             setSubcategory(sub === "All" ? undefined : sub);
                             setMobileOpen(false);
                         }}
-                        className={`block w-full text-left text-sm py-1 transition-colors ${
-                            (filters.subcategory === sub) || (!filters.subcategory && sub === "All")
+                        className={`block w-full text-left text-sm py-1 transition-colors ${(filters.subcategory === sub) || (!filters.subcategory && sub === "All")
                                 ? "font-bold underline decoration-1 underline-offset-4"
                                 : "text-gray-600 hover:text-black"
-                        }`}
+                            }`}
                     >
                         {sub.charAt(0).toUpperCase() + sub.slice(1)}
                     </button>
@@ -109,11 +107,10 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({
                                 setSize(filters.size === size ? undefined : size);
                                 setMobileOpen(false);
                             }}
-                            className={`w-10 h-10 flex items-center justify-center text-xs border transition-all ${
-                                filters.size === size
+                            className={`w-10 h-10 flex items-center justify-center text-xs border transition-all ${filters.size === size
                                     ? "bg-black text-white border-black"
                                     : "bg-transparent text-black border-gray-300 hover:border-black"
-                            }`}
+                                }`}
                         >
                             {size}
                         </button>
@@ -160,7 +157,7 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({
             )}
 
             {/* Desktop Sidebar */}
-            <div className="hidden lg:block w-64 pr-8 sticky top-24 self-start max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+            <div className="hidden lg:block w-64 pr-8 custom-scrollbar">
                 <SidebarContent />
             </div>
         </>
