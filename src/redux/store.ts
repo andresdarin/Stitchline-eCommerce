@@ -8,12 +8,15 @@ import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 // ✅ Fix para SSR - Storage que funciona en servidor y cliente
 const createNoopStorage = () => {
     return {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         getItem(_key: string) {
             return Promise.resolve(null);
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
         setItem(_key: string, value: any) {
             return Promise.resolve(value);
         },
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         removeItem(_key: string) {
             return Promise.resolve();
         },
