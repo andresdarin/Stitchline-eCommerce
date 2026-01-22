@@ -51,6 +51,7 @@ export const useStoreFilters = (initial?: Partial<StoreFilters>) => {
     const setColor = useCallback((color?: string) => setFilters((f) => ({ ...f, color, page: 1 })), []);
     const setPriceRange = useCallback((min?: number, max?: number) => setFilters((f) => ({ ...f, priceMin: min, priceMax: max, page: 1 })), []);
     const setSearch = useCallback((search?: string) => setFilters((f) => ({ ...f, search, page: 1 })), []);
+    const setTags = useCallback((tags?: string[]) => setFilters((f) => ({ ...f, tags, page: 1 })), []);
     const setSort = useCallback((sort: SortOption) => setFilters((f) => ({ ...f, sort })), []);
     const setPage = useCallback((page: number) => setFilters((f) => ({ ...f, page })), []);
     const setPerPage = useCallback((perPage: number) => setFilters((f) => ({ ...f, perPage })), []);
@@ -64,6 +65,7 @@ export const useStoreFilters = (initial?: Partial<StoreFilters>) => {
         setColor,
         setPriceRange,
         setSearch,
+        setTags,
         setSort,
         setPage,
         setPerPage,
