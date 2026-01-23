@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { usePanel } from "@/contexts/PanelContext";
 
 export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
-    const { cartOpen, setCartOpen, setFavsOpen, setProfileOpen } = usePanel();
+    const { cartOpen, toggleCart } = usePanel();
     const dispatch = useDispatch();
     const cart = useSelector(selectCartItems);
     const cartTotal = useSelector(selectCartTotal);
@@ -19,11 +19,7 @@ export const CartIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = 
         <div className="relative">
             <button
                 className="p-2 flex items-center justify-center cursor-pointer relative"
-                onClick={() => {
-                    setCartOpen(!cartOpen);
-                    setFavsOpen(false);
-                    setProfileOpen(false);
-                }}
+                onClick={toggleCart}
             >
                 <ShoppingCartIcon size={20} />
                 {cart.length > 0 && (

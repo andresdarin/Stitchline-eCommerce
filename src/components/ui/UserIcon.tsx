@@ -6,7 +6,7 @@ import { User } from "@/types/user";
 import { useState, useEffect } from "react";
 
 export const UserPanel: React.FC = () => {
-    const { profileOpen, setProfileOpen, setCartOpen, setFavsOpen } = usePanel();
+    const { profileOpen, setProfileOpen, toggleProfile } = usePanel();
     const [user, setUser] = useState<User | null>(null);
 
     // Cargar usuario desde localStorage (mock para desarrollo)
@@ -44,11 +44,7 @@ export const UserPanel: React.FC = () => {
         <div className="relative">
             <button
                 className="p-2 cursor-pointer"
-                onClick={() => {
-                    setProfileOpen(!profileOpen);
-                    setCartOpen(false);
-                    setFavsOpen(false);
-                }}
+                onClick={toggleProfile}
             >
                 <UserRound size={20} />
             </button>

@@ -7,17 +7,13 @@ import { RootState } from "@/redux/store";
 import { usePanel } from "@/contexts/PanelContext";
 
 export const FavsIconPanel: React.FC<{ badgeColor?: string }> = ({ badgeColor = "bg-black text-white" }) => {
-    const { favsOpen, setFavsOpen, setCartOpen, setProfileOpen } = usePanel();
+    const { favsOpen, toggleFavs } = usePanel();
     const dispatch = useDispatch();
     const favs = useSelector((state: RootState) => state.favs.items);
 
     return (
         <div className="relative">
-            <button className="p-2 relative cursor-pointer" onClick={() => {
-                setFavsOpen(!favsOpen);
-                setCartOpen(false);
-                setProfileOpen(false);
-            }}>
+            <button className="p-2 relative cursor-pointer" onClick={toggleFavs}>
                 <Bookmark size={20} />
                 {favs.length > 0 && (
                     <span className={`ml-1 text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center absolute -top-2 -right-2 cursor-pointer ${badgeColor}`}>
