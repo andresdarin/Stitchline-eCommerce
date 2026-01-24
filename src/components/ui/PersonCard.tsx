@@ -16,57 +16,55 @@ export const PersonCard: React.FC<PersonCardProps> = ({
     layout = 'vertical',
     className = ""
 }) => {
-    if (layout === 'vertical') {
-        // Layout de Clara (imagen arriba, texto abajo)
-        return (
-            <div className={`flex flex-col items-center border-b md:border-r border-black ${className}`}>
-                <div className="flex justify-center p-10">
+    const isHorizontal = layout.includes('horizontal');
+    const isRight = layout === 'horizontal-right';
+
+    return (
+        <div className={`flex flex-col ${isHorizontal ? 'lg:flex-row' : ''} gap-12 lg:gap-24 items-center ${className}`}>
+
+             {/* If Right Layout, Text comes first on desktop (left), Image second (right).
+                 Wait, if layout is 'horizontal-right', usually implies image is on right?
+                 Let's assume 'horizontal-right' means Image on Right.
+                 So Text is on Left.
+             */}
+
+             {/* Text Block for Right Layout */}
+             {(isRight && isHorizontal) && (
+                <div className="flex-1 order-2 lg:order-1 w-full">
+                     <div className="max-w-xl ml-auto text-right">
+                        {/* Align text right for variety if image is on right? Or keep left aligned?
+                            Let's keep text justified or left, but the block is on the left.
+                        */}
+                        <h2 className="text-5xl md:text-7xl font-thin uppercase tracking-tighter mb-8">{name}</h2>
+                        <p className="text-lg md:text-xl font-light text-gray-600 leading-loose text-justify">
+                            {description}
+                        </p>
+                    </div>
+                </div>
+            )}
+
+            {/* Image Block */}
+            <div className={`relative ${isHorizontal ? 'flex-1 lg:max-w-[45%]' : 'w-full max-w-3xl'} ${isRight ? 'order-1 lg:order-2' : 'order-1'}`}>
+                 <div className="overflow-hidden aspect-[3/4]">
                     <Image
                         src={image}
                         alt={name}
-                        width={350}
-                        height={350}
-                        className="border border-black object-cover"
+                        width={800}
+                        height={1000}
+                        className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
                     />
-                </div>
-                <div className="flex flex-col border-t border-black p-10 w-full">
-                    <h2 className="text-4xl font-thin mb-4 uppercase tracking-wide">{name}</h2>
-                    <p className="text-justify text-black text-lg font-light">
-                        {description}
-                    </p>
-                </div>
+                 </div>
             </div>
-        );
-    }
 
-    // Layout horizontal (como Agatha)
-    const isImageRight = layout === 'horizontal-right';
-
-    return (
-        <div className={`grid md:grid-cols-2 items-center border-b-1 border-black ${className}`}>
-            {!isImageRight && (
-                <div className="border-r border-black h-full items-center p-10">
-                    <h2 className="text-4xl uppercase font-thin mb-4 tracking-wide">{name}</h2>
-                    <p className="text-justify text-black text-lg font-light">
-                        {description}
-                    </p>
-                </div>
-            )}
-            <div className="flex justify-center p-10">
-                <Image
-                    src={image}
-                    alt={name}
-                    width={350}
-                    height={350}
-                    className="border border-black object-cover mb-6"
-                />
-            </div>
-            {isImageRight && (
-                <div className="border-r border-black h-full items-center p-10">
-                    <h2 className="text-4xl uppercase font-thin mb-4 tracking-wide">{name}</h2>
-                    <p className="text-justify text-black text-lg font-light">
-                        {description}
-                    </p>
+            {/* Text Block for Left Layout or Vertical */}
+            {(!isRight || !isHorizontal) && (
+                 <div className={`flex-1 w-full ${!isHorizontal ? 'text-center mt-8' : 'lg:pl-10 order-2'}`}>
+                    <div className={`max-w-xl ${!isHorizontal ? 'mx-auto' : ''}`}>
+                        <h2 className="text-5xl md:text-7xl font-thin uppercase tracking-tighter mb-8">{name}</h2>
+                        <p className="text-lg md:text-xl font-light text-gray-600 leading-loose text-justify">
+                            {description}
+                        </p>
+                    </div>
                 </div>
             )}
         </div>
