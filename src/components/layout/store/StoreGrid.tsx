@@ -1,28 +1,24 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { products } from "@/data/data";
 import { Card } from "@/components/ui/Card";
-import { Dropdown } from "@/components/ui/DropDown";
+import StoreSidebar from "./StoreSidebar";
 import { useStoreFilters } from "@/hooks/useStoreFilters";
 import { useProducts } from "@/hooks/useProducts";
-import { extractCategories, extractSubcategories, extractSizes, extractColors } from "@/utils/productHelpers";
 import { Pagination } from "./Pagination";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/slices/cartSlice";
 import { AppDispatch } from "@/redux/store";
+import { Filter } from "lucide-react";
 
 interface StoreGridProps {
-    fixedCategory?: string; // ← nueva prop opcional
+    fixedCategory?: string;
 }
 
 const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
     const dispatch = useDispatch<AppDispatch>();
-    const { filters, setCategory, setSubcategory, setSize, setColor, setPerPage, setPage } = useStoreFilters();
-
-    const categories = ["All", ...extractCategories(products)];
-    const subcategories = ["All", ...extractSubcategories(products, filters.category === "All" ? undefined : filters.category)];
-    const sizes = ["All", ...extractSizes(products)];
-    const colors = ["All", ...extractColors(products)];
+    const { filters, setCategory, setPerPage, setPage } = useStoreFilters();
+    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
     // ✅ Si hay una categoría fija, aplicarla directamente
     const activeCategory = fixedCategory || filters.category;
@@ -38,62 +34,64 @@ const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
     }, [setPerPage, setCategory, fixedCategory]);
 
     return (
-        <div className="p-50">
-            {/* filtros */}
-            <div className="flex justify-end">
-                <div className="flex flex-wrap gap-0 mb-6 overflow-visible">
-                    {/* Oculta el dropdown de categoría si está fija */}
-                    {!fixedCategory && (
-                        <Dropdown
-                            options={categories}
-                            value={filters.category ?? "Category"}
-                            onChange={setCategory}
-                            placeholder="Category"
-                            className="border border-black rounded-none w-40"
-                        />
-                    )}
+        <div className="flex flex-col lg:flex-row min-h-screen relative bg-white">
+            {/* Desktop Sidebar */}
+            <div className="hidden lg:block w-72 shrink-0 border-r border-black">
+                 <div className="sticky top-0 h-screen overflow-y-auto no-scrollbar">
+                    <StoreSidebar fixedCategory={fixedCategory} />
+                 </div>
+            </div>
 
-                    <Dropdown
-                        options={subcategories}
-                        value={filters.subcategory ?? "Item"}
-                        onChange={(v) => setSubcategory(v === "All" ? undefined : v)}
-                        placeholder="Subcategory"
-                        className={`border ${!fixedCategory ? "border-l-0" : ""} border-black rounded-none w-40`}
-                    />
-
-                    <Dropdown
-                        options={sizes}
-                        value={filters.size ?? "Size"}
-                        onChange={(v) => setSize(v === "All" ? undefined : v)}
-                        placeholder="Size"
-                        className="border border-l-0 border-black rounded-none w-40"
-                    />
-
-                    <Dropdown
-                        options={colors}
-                        value={filters.color ?? "Color"}
-                        onChange={(v) => setColor(v === "All" ? undefined : v)}
-                        placeholder="Color"
-                        className="border border-l-0 border-black rounded-none w-40"
+            {/* Mobile Sidebar (Overlay/Drawer) */}
+            {mobileFiltersOpen && (
+                <div className="fixed inset-0 z-50 bg-white lg:hidden animate-in slide-in-from-left duration-300">
+                    <StoreSidebar
+                        fixedCategory={fixedCategory}
+                        onClose={() => setMobileFiltersOpen(false)}
+                        className="w-full h-full"
                     />
                 </div>
-            </div>
+            )}
 
-            {/* grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {productsFiltered.length ? (
-                    productsFiltered.map((product) => (
-                        <Card key={product.id} product={product} addToCart={(p) => dispatch(addToCart(p))} />
-                    ))
-                ) : (
-                    <div className="col-span-full text-center py-20 text-gray-500">
-                        No products found for the selected filters.
-                    </div>
-                )}
-            </div>
+            {/* Main Content */}
+            <div className="flex-1 p-6 md:p-10 lg:p-14">
+                {/* Mobile Filter Toggle */}
+                <div className="lg:hidden mb-8 flex justify-between items-center border-b border-black pb-4">
+                    <span className="text-xl font-thin uppercase tracking-widest">
+                        {productsFiltered.length} Products
+                    </span>
+                    <button
+                        onClick={() => setMobileFiltersOpen(true)}
+                        className="flex items-center gap-2 border border-black px-6 py-2 uppercase text-sm font-bold hover:bg-black hover:text-white transition-colors"
+                    >
+                        <Filter size={16} /> Filters
+                    </button>
+                </div>
 
-            {/* pagination */}
-            <Pagination page={filters.page || 1} totalPages={totalPages} onPageChange={setPage} />
+                <div className="hidden lg:flex justify-between items-center mb-8 border-b border-black pb-4">
+                     <span className="text-xl font-thin uppercase tracking-widest">
+                        {productsFiltered.length} Products Found
+                    </span>
+                </div>
+
+                {/* Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8">
+                    {productsFiltered.length ? (
+                        productsFiltered.map((product) => (
+                            <Card key={product.id} product={product} addToCart={(p) => dispatch(addToCart(p))} />
+                        ))
+                    ) : (
+                        <div className="col-span-full text-center py-20 text-gray-500">
+                            <p className="text-xl font-light uppercase">No products found for the selected filters.</p>
+                        </div>
+                    )}
+                </div>
+
+                {/* Pagination */}
+                <div className="mt-16 border-t border-black pt-8">
+                    <Pagination page={filters.page || 1} totalPages={totalPages} onPageChange={setPage} />
+                </div>
+            </div>
         </div>
     );
 };
