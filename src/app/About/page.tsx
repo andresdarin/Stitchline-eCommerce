@@ -1,12 +1,9 @@
 'use client';
 import { About } from "@/components/layout/about/About";
 
-export const AboutPage = () => {
+const AboutPage = () => {
     return (
-        <>
-            <About />
-        </>
-
+        <About />
     );
 };
 
