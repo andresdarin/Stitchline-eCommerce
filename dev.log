@@ -1,0 +1,16 @@
+
+> fasion-store@0.1.0 dev
+> next dev -H 0.0.0.0 -p 3000
+
+   ▲ Next.js 15.5.4
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 1894ms
+ ○ Compiling /Store ...
+ ✓ Compiled /Store in 10.8s (767 modules)
+ GET /Store 200 in 12801ms
+ ○ Compiling /About ...
+ ✓ Compiled /About in 2.7s (812 modules)
+ GET /About 200 in 4114ms
