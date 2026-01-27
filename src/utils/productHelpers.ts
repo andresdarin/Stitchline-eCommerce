@@ -26,3 +26,9 @@ export const extractColors = (products: Product[]) => {
     products.forEach((p) => (p.colors || []).forEach((c) => set.add(c)));
     return Array.from(set).sort();
 };
+
+export const extractTags = (products: Product[]) => {
+    const set = new Set<string>();
+    products.forEach((p) => (p.tags || []).forEach((t) => set.add(t)));
+    return Array.from(set).sort();
+};
