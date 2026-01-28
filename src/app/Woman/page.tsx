@@ -1,5 +1,6 @@
 import Woman from '../../components/main/Woman';
-export const WomanPage = () => {
+
+const WomanPage = () => {
     return (
         <Woman />
     );
