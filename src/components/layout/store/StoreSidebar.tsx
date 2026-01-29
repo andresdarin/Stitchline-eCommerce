@@ -38,7 +38,7 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({ onClose, className =
                             <button
                                 onClick={() => {
                                     setCategory(cat);
-                                    if (onClose) onClose(); // Auto close on mobile selection if desired, or keep open
+                                    if (onClose) onClose();
                                 }}
                                 className={`text-sm uppercase tracking-wide hover:underline text-left w-full transition-all ${
                                     filters.category === cat ? "font-bold text-black ml-2" : "font-light text-gray-600"
@@ -82,7 +82,6 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({ onClose, className =
                             key={s}
                             onClick={() => {
                                 setSize(s === "All" ? undefined : s);
-                                // Don't close on size selection, users might pick multiple or it's less jarring
                             }}
                             className={`text-xs uppercase border px-3 py-1 transition-all ${
                                 (filters.size === s) || (s === "All" && !filters.size)
