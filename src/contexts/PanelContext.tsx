@@ -18,8 +18,39 @@ export function PanelProvider({ children }: { children: ReactNode }) {
     const [favsOpen, setFavsOpen] = useState(false)
     const [profileOpen, setProfileOpen] = useState(false)
 
+    const handleSetCartOpen = (open: boolean) => {
+        setCartOpen(open)
+        if (open) {
+            setFavsOpen(false)
+            setProfileOpen(false)
+        }
+    }
+
+    const handleSetFavsOpen = (open: boolean) => {
+        setFavsOpen(open)
+        if (open) {
+            setCartOpen(false)
+            setProfileOpen(false)
+        }
+    }
+
+    const handleSetProfileOpen = (open: boolean) => {
+        setProfileOpen(open)
+        if (open) {
+            setCartOpen(false)
+            setFavsOpen(false)
+        }
+    }
+
     return (
-        <PanelContext.Provider value={{ cartOpen, favsOpen, profileOpen, setCartOpen, setFavsOpen, setProfileOpen }}>
+        <PanelContext.Provider value={{
+            cartOpen,
+            favsOpen,
+            profileOpen,
+            setCartOpen: handleSetCartOpen,
+            setFavsOpen: handleSetFavsOpen,
+            setProfileOpen: handleSetProfileOpen
+        }}>
             {children}
         </PanelContext.Provider>
     )
