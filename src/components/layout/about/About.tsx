@@ -1,20 +1,19 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { useRef } from 'react';
 import Image from 'next/image';
 import { teamMembers } from '@/data/teamData';
 import PostCarousel from '../postCarousel/PostCarousel';
 import Footer from '../footer/Footer';
 import CardGrid from '@/components/ui/CardGrid';
-import { Title } from '@/components/ui/Title';
 
 export const About = () => {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
+
+  if (!teamMembers || teamMembers.length < 2) {
+    return null;
+  }
 
   return (
     <div ref={containerRef} className="bg-white text-black font-light overflow-hidden relative">
