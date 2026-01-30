@@ -51,6 +51,7 @@ const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
                 setSize={setSize}
                 isOpen={isSidebarOpen}
                 onClose={() => setIsSidebarOpen(false)}
+                fixedCategory={fixedCategory}
             />
 
             {/* Main Content */}
