@@ -2,7 +2,7 @@ import React from "react";
 import { X } from "lucide-react";
 import { StoreFilters } from "@/hooks/useStoreFilters";
 
-interface StoreSidebarProps {
+interface ProductFilterSidebarProps {
     filters: StoreFilters;
     setCategory: (v: string) => void;
     setSubcategory: (v: string | undefined) => void;
@@ -17,7 +17,7 @@ interface StoreSidebarProps {
     fixedCategory?: string;
 }
 
-export const StoreSidebar: React.FC<StoreSidebarProps> = ({
+export const ProductFilterSidebar: React.FC<ProductFilterSidebarProps> = ({
     filters,
     setCategory,
     setSubcategory,

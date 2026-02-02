@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { products } from "@/data/data";
 import { Card } from "@/components/ui/Card";
-import { StoreSidebar } from "./StoreSidebar";
+import { ProductFilterSidebar } from "./ProductFilterSidebar";
 import { useStoreFilters } from "@/hooks/useStoreFilters";
 import { useProducts } from "@/hooks/useProducts";
 import { extractCategories, extractSubcategories, extractSizes, extractColors } from "@/utils/productHelpers";
@@ -42,7 +42,7 @@ const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
     return (
         <div className="flex min-h-screen">
             {/* Sidebar / Filter Drawer */}
-            <StoreSidebar
+            <ProductFilterSidebar
                 filters={filters}
                 setCategory={setCategory}
                 setSubcategory={setSubcategory}
