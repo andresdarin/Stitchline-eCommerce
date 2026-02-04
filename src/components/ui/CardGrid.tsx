@@ -18,16 +18,16 @@ const CardGrid: React.FC = () => {
                     ))}
 
                     {/* Card "Soon..." */}
-                    <div className="bg-white text-black border border-black p-6">
+                    <div className="bg-white text-black border-l border-r border-b border-black p-8 hover:bg-neutral-50 transition-colors">
                         <div className="text-center">
-                            <h3 className="text-2xl font-thin uppercase tracking-wide">Stay tunned!</h3>
-                            <p className="flex justify-center italic">more projects soon...</p>
+                            <h3 className="text-xl font-bold uppercase tracking-widest mb-2">Stay tuned!</h3>
+                            <p className="text-sm font-light text-gray-500 italic">More projects coming soon...</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Área derecha - Imagen */}
-                <div className="lg:col-span-9 flex items-center justify-center p-8 border-b-1 boder border-black">
+                <div className="lg:col-span-9 flex items-center justify-center p-8 border-b border-black">
                     <div className=" shadow-2xl overflow-hidden max-w-4xl hover:shadow-3xl transition-shadow duration-300">
                         <Image
                             src="/img/coming_soon.png"

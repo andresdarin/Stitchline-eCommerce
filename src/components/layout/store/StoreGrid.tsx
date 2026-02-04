@@ -1,30 +1,30 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { products } from "@/data/data";
 import { Card } from "@/components/ui/Card";
-import { Dropdown } from "@/components/ui/DropDown";
 import { useStoreFilters } from "@/hooks/useStoreFilters";
 import { useProducts } from "@/hooks/useProducts";
-import { extractCategories, extractSubcategories, extractSizes, extractColors } from "@/utils/productHelpers";
+import { extractCategories, extractSubcategories, extractSizes } from "@/utils/productHelpers";
 import { Pagination } from "./Pagination";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/slices/cartSlice";
 import { AppDispatch } from "@/redux/store";
+import StoreSidebar from "./StoreSidebar";
+import { Filter } from "lucide-react";
 
 interface StoreGridProps {
-    fixedCategory?: string; // ← nueva prop opcional
+    fixedCategory?: string;
 }
 
 const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
     const dispatch = useDispatch<AppDispatch>();
-    const { filters, setCategory, setSubcategory, setSize, setColor, setPerPage, setPage } = useStoreFilters();
+    const { filters, setCategory, setSubcategory, setSize, setPerPage, setPage } = useStoreFilters();
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const categories = ["All", ...extractCategories(products)];
     const subcategories = ["All", ...extractSubcategories(products, filters.category === "All" ? undefined : filters.category)];
     const sizes = ["All", ...extractSizes(products)];
-    const colors = ["All", ...extractColors(products)];
 
-    // ✅ Si hay una categoría fija, aplicarla directamente
     const activeCategory = fixedCategory || filters.category;
 
     const { productsFiltered, totalPages } = useProducts(products, {
@@ -33,67 +33,58 @@ const StoreGrid: React.FC<StoreGridProps> = ({ fixedCategory }) => {
     });
 
     useEffect(() => {
-        setPerPage(8);
+        setPerPage(12);
         if (fixedCategory) setCategory(fixedCategory);
     }, [setPerPage, setCategory, fixedCategory]);
 
     return (
-        <div className="p-50">
-            {/* filtros */}
-            <div className="flex justify-end">
-                <div className="flex flex-wrap gap-0 mb-6 overflow-visible">
-                    {/* Oculta el dropdown de categoría si está fija */}
-                    {!fixedCategory && (
-                        <Dropdown
-                            options={categories}
-                            value={filters.category ?? "Category"}
-                            onChange={setCategory}
-                            placeholder="Category"
-                            className="border border-black rounded-none w-40"
-                        />
-                    )}
+        <div className="min-h-screen bg-white text-black">
+            <div className="flex flex-col md:flex-row relative">
+                {/* Sidebar */}
+                <StoreSidebar
+                    filters={filters}
+                    setCategory={setCategory}
+                    setSubcategory={setSubcategory}
+                    setSize={setSize}
+                    categories={categories}
+                    subcategories={subcategories}
+                    sizes={sizes}
+                    isOpen={isSidebarOpen}
+                    onClose={() => setIsSidebarOpen(false)}
+                />
 
-                    <Dropdown
-                        options={subcategories}
-                        value={filters.subcategory ?? "Item"}
-                        onChange={(v) => setSubcategory(v === "All" ? undefined : v)}
-                        placeholder="Subcategory"
-                        className={`border ${!fixedCategory ? "border-l-0" : ""} border-black rounded-none w-40`}
-                    />
+                {/* Main Content */}
+                <div className="flex-1 p-4 md:p-8 lg:p-12">
+                     {/* Mobile Filter Toggle */}
+                    <div className="md:hidden flex justify-end mb-6">
+                        <button
+                            onClick={() => setIsSidebarOpen(true)}
+                            className="flex items-center gap-2 uppercase font-bold tracking-widest border border-black px-4 py-2 text-sm hover:bg-black hover:text-white transition-colors"
+                        >
+                            <Filter className="w-4 h-4" />
+                            Filters
+                        </button>
+                    </div>
 
-                    <Dropdown
-                        options={sizes}
-                        value={filters.size ?? "Size"}
-                        onChange={(v) => setSize(v === "All" ? undefined : v)}
-                        placeholder="Size"
-                        className="border border-l-0 border-black rounded-none w-40"
-                    />
+                    {/* Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
+                        {productsFiltered.length ? (
+                            productsFiltered.map((product) => (
+                                <Card key={product.id} product={product} addToCart={(p) => dispatch(addToCart(p))} />
+                            ))
+                        ) : (
+                            <div className="col-span-full text-center py-20 text-gray-500 font-light">
+                                No products found for the selected filters.
+                            </div>
+                        )}
+                    </div>
 
-                    <Dropdown
-                        options={colors}
-                        value={filters.color ?? "Color"}
-                        onChange={(v) => setColor(v === "All" ? undefined : v)}
-                        placeholder="Color"
-                        className="border border-l-0 border-black rounded-none w-40"
-                    />
+                    {/* Pagination */}
+                    <div className="mt-16">
+                        <Pagination page={filters.page || 1} totalPages={totalPages} onPageChange={setPage} />
+                    </div>
                 </div>
             </div>
-
-            {/* grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {productsFiltered.length ? (
-                    productsFiltered.map((product) => (
-                        <Card key={product.id} product={product} addToCart={(p) => dispatch(addToCart(p))} />
-                    ))
-                ) : (
-                    <div className="col-span-full text-center py-20 text-gray-500">
-                        No products found for the selected filters.
-                    </div>
-                )}
-            </div>
-
-            {/* pagination */}
-            <Pagination page={filters.page || 1} totalPages={totalPages} onPageChange={setPage} />
         </div>
     );
 };

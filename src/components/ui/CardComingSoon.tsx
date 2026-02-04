@@ -9,25 +9,21 @@ interface CardProps {
 
 const CardComingSoon: React.FC<CardProps> = ({ data, isFirst = false }) => {
     return (
-        <div className={` text-black border-1 border-b-0 border-l-0 border-black ${isFirst ? 'border-t-0' : 'border-t-1 border-black'}`}>
-            {/* Sección superior con título y descripción */}
-            <div className="p-10 flex flex-col justify-between border-black">
-                <h3 className="text-2xl font-thin mb-4 uppercase tracking-wide">
+        <div className={`bg-white text-black border-l border-r border-b border-black p-8 group hover:bg-neutral-50 transition-colors ${isFirst ? 'border-t' : ''}`}>
+            <div className="flex flex-col gap-4">
+                <h3 className="text-xl font-bold uppercase tracking-widest group-hover:opacity-70 transition-opacity">
                     {data.title}
                 </h3>
 
-                {/* Sección inferior con icono */}
-                <div className="h-12 flex items-center justify-end">
-                    <p className="text-justify text-black text-lg font-light pr-10">
+                <div className="flex justify-between items-end gap-6">
+                    <p className="text-sm font-light text-gray-800 leading-relaxed text-justify">
                         {data.description}
                     </p>
-                    <span className="text-lg rotate-315">
+                    <span className="text-lg transform -rotate-45 group-hover:rotate-0 transition-transform duration-300">
                         <FaArrowRightLong />
                     </span>
                 </div>
             </div>
-
-
         </div>
     );
 };
