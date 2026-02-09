@@ -8,16 +8,14 @@ import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 // ✅ Fix para SSR - Storage que funciona en servidor y cliente
 const createNoopStorage = () => {
     return {
-        getItem(_key: string) {
-            void _key;
+        getItem() {
             return Promise.resolve(null);
         },
         setItem(_key: string, value: unknown) {
             void _key;
             return Promise.resolve(value);
         },
-        removeItem(_key: string) {
-            void _key;
+        removeItem() {
             return Promise.resolve();
         },
     };

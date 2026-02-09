@@ -4,5 +4,4 @@ const WomanPage = () => {
         <Woman />
     );
 };
-
 export default WomanPage;

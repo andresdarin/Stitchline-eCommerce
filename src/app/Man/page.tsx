@@ -1,4 +1,3 @@
-
 import Man from "@/components/main/Man";
 
 const ManPage = () => {
@@ -6,4 +5,5 @@ const ManPage = () => {
         <Man />
     );
 };
+
 export default ManPage;
