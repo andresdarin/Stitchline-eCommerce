@@ -14,9 +14,33 @@ interface PanelContextType {
 const PanelContext = createContext<PanelContextType | undefined>(undefined)
 
 export function PanelProvider({ children }: { children: ReactNode }) {
-    const [cartOpen, setCartOpen] = useState(false)
-    const [favsOpen, setFavsOpen] = useState(false)
-    const [profileOpen, setProfileOpen] = useState(false)
+    const [cartOpen, setCartOpenState] = useState(false)
+    const [favsOpen, setFavsOpenState] = useState(false)
+    const [profileOpen, setProfileOpenState] = useState(false)
+
+    const setCartOpen = (open: boolean) => {
+        setCartOpenState(open)
+        if (open) {
+            setFavsOpenState(false)
+            setProfileOpenState(false)
+        }
+    }
+
+    const setFavsOpen = (open: boolean) => {
+        setFavsOpenState(open)
+        if (open) {
+            setCartOpenState(false)
+            setProfileOpenState(false)
+        }
+    }
+
+    const setProfileOpen = (open: boolean) => {
+        setProfileOpenState(open)
+        if (open) {
+            setCartOpenState(false)
+            setFavsOpenState(false)
+        }
+    }
 
     return (
         <PanelContext.Provider value={{ cartOpen, favsOpen, profileOpen, setCartOpen, setFavsOpen, setProfileOpen }}>
@@ -32,4 +56,3 @@ export function usePanel() {
     }
     return context
 }
-

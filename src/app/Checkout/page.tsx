@@ -1,6 +1,6 @@
 import Checkout from "@/components/layout/store/Checkout";
 
-export const CheckoutPage = () => {
+const CheckoutPage = () => {
     return (
         <Checkout />
     );
