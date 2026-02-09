@@ -39,8 +39,8 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({
     const sizes = ["All", ...extractSizes(products)];
     const colors = ["All", ...extractColors(products)];
 
-    // Content component to be reused in Desktop and Mobile views
-    const FilterContent = () => (
+    // Content to be reused in Desktop and Mobile views
+    const renderFilterContent = () => (
         <div className="flex flex-col gap-8">
             {/* Header */}
             <div className="flex items-center justify-between">
@@ -163,7 +163,7 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({
             {/* Desktop Sidebar (Hidden on mobile) */}
             <aside className="hidden lg:block w-64 shrink-0 pr-8 border-r border-transparent">
                 <div className="sticky top-24">
-                   <FilterContent />
+                   {renderFilterContent()}
                 </div>
             </aside>
 
@@ -196,7 +196,7 @@ export const StoreSidebar: React.FC<StoreSidebarProps> = ({
                             </div>
 
                             <div className="flex-1 overflow-y-auto p-6">
-                                <FilterContent />
+                                {renderFilterContent()}
                             </div>
 
                             <div className="p-6 border-t border-gray-100">
