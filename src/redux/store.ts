@@ -9,12 +9,16 @@ import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 const createNoopStorage = () => {
     return {
         getItem(_key: string) {
+            void _key;
             return Promise.resolve(null);
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         setItem(_key: string, value: any) {
+            void _key;
             return Promise.resolve(value);
         },
         removeItem(_key: string) {
+            void _key;
             return Promise.resolve();
         },
     };

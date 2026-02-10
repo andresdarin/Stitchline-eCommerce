@@ -21,6 +21,7 @@ export const PostCarousel: React.FC = () => {
         // duración proporcional al ancho; mínimo 8s para que no vaya demasiado rápido
         const computed = Math.max(8, Math.round(singleWidth / SPEED_PX_PER_SEC));
         setDuration(computed);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [posts]);
 
     return (
