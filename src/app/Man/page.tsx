@@ -1,9 +1,7 @@
-
 import Man from "@/components/main/Man";
 
-export const ManPage = () => {
+export default function ManPage() {
     return (
         <Man />
     );
-};
-export default ManPage;
+}

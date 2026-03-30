@@ -1,9 +1,7 @@
 import Store from "@/components/main/Store"
 
-export const StorePage = () => {
+export default function StorePage() {
     return (
         <Store />
     );
-};
-
-export default StorePage;
+}

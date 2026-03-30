@@ -1,8 +1,7 @@
 import Woman from '../../components/main/Woman';
-export const WomanPage = () => {
+
+export default function WomanPage() {
     return (
         <Woman />
     );
-};
-
-export default WomanPage;
+}
