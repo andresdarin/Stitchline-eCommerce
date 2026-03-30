@@ -16,22 +16,22 @@ export const PersonCard: React.FC<PersonCardProps> = ({
     layout = 'vertical',
     className = ""
 }) => {
+    // Layout Vertical: Clean, image top, text bottom
     if (layout === 'vertical') {
-        // Layout de Clara (imagen arriba, texto abajo)
         return (
-            <div className={`flex flex-col items-center border-b md:border-r border-black ${className}`}>
-                <div className="flex justify-center p-10">
+            <div className={`flex flex-col group ${className}`}>
+                <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
                     <Image
                         src={image}
                         alt={name}
-                        width={350}
-                        height={350}
-                        className="border border-black object-cover"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                     />
                 </div>
-                <div className="flex flex-col border-t border-black p-10 w-full">
-                    <h2 className="text-4xl font-thin mb-4 uppercase tracking-wide">{name}</h2>
-                    <p className="text-justify text-black text-lg font-light">
+                <div>
+                    <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-3">{name}</h2>
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                         {description}
                     </p>
                 </div>
@@ -39,36 +39,47 @@ export const PersonCard: React.FC<PersonCardProps> = ({
         );
     }
 
-    // Layout horizontal (como Agatha)
     const isImageRight = layout === 'horizontal-right';
 
     return (
-        <div className={`grid md:grid-cols-2 items-center border-b-1 border-black ${className}`}>
-            {!isImageRight && (
-                <div className="border-r border-black h-full items-center p-10">
-                    <h2 className="text-4xl uppercase font-thin mb-4 tracking-wide">{name}</h2>
-                    <p className="text-justify text-black text-lg font-light">
-                        {description}
-                    </p>
-                </div>
-            )}
-            <div className="flex justify-center p-10">
-                <Image
-                    src={image}
-                    alt={name}
-                    width={350}
-                    height={350}
-                    className="border border-black object-cover mb-6"
-                />
-            </div>
-            {isImageRight && (
-                <div className="border-r border-black h-full items-center p-10">
-                    <h2 className="text-4xl uppercase font-thin mb-4 tracking-wide">{name}</h2>
-                    <p className="text-justify text-black text-lg font-light">
-                        {description}
-                    </p>
-                </div>
-            )}
+        <div className={`grid md:grid-cols-2 gap-8 md:gap-24 items-center group ${className}`}>
+             {isImageRight ? (
+                <>
+                    <div className="order-2 md:order-1 flex flex-col items-start md:items-end md:text-right">
+                         <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6 transition-colors duration-300 group-hover:text-gray-800">{name}</h2>
+                         <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg font-light">
+                            {description}
+                        </p>
+                    </div>
+                    <div className="order-1 md:order-2 relative w-full aspect-[4/5] overflow-hidden bg-gray-100">
+                         <Image
+                            src={image}
+                            alt={name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                        />
+                    </div>
+                </>
+             ) : (
+                <>
+                    <div className="relative w-full aspect-[4/5] overflow-hidden bg-gray-100">
+                         <Image
+                            src={image}
+                            alt={name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                        />
+                    </div>
+                    <div className="flex flex-col items-start">
+                         <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6 transition-colors duration-300 group-hover:text-gray-800">{name}</h2>
+                         <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg font-light">
+                            {description}
+                        </p>
+                    </div>
+                </>
+             )}
         </div>
     );
 };
